@@ -1,12 +1,15 @@
+import { useTranslation } from 'react-i18next'
 import SectionWrapper from '../SectionWrapper/SectionWrapper'
 import whatsappLogo from '../../assets/whatsapp.png'
 import './ContactSection.css'
 
 const ContactSection = () => {
+  const { t } = useTranslation()
+
   return (
     <SectionWrapper id="kontakt" className="contact" ariaLabelledby="contact-title">
       <div className="contact-inner">
-        <h2 id="contact-title">Napisz do nas - jeszcze dziś dobierzemy grupę!</h2>
+        <h2 id="contact-title">{t('contact.title')}</h2>
         <div className="contact-grid">
           <div className="contact-card">
             <div className="contact-icon phone" aria-hidden="true">
@@ -16,9 +19,9 @@ const ContactSection = () => {
               <img src={whatsappLogo} alt="" aria-hidden="true" className="pill-icon-img" />
               <div className="pill-text">
                 <span className="pill-sub">Joanna Adamek</span>
-                <strong>Whatsapp</strong>
+                <strong>{t('contact.whatsapp')}</strong>
               </div>
-              <span className="pill-badge">Online</span>
+              <span className="pill-badge">{t('common.online')}</span>
             </a>
           </div>
 
@@ -27,7 +30,7 @@ const ContactSection = () => {
               ✉️
             </div>
             <a className="pill email" href="mailto:kontakt@joannaadamek.edu.pl">
-              <strong>E-mail</strong>
+              <strong>{t('contact.email')}</strong>
             </a>
           </div>
         </div>
