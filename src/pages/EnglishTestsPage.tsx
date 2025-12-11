@@ -244,7 +244,7 @@ const questionsBasic: Question[] = [
     options: [
       { value: 'a', label: 'A) darkness' },
       { value: 'b', label: 'B) long and dark' },
-      { value: 'c', label: 'C) dark, long' },
+      { value: 'c', label: 'C) long dark and' },
     ],
     correct: 'b',
   },
@@ -320,13 +320,13 @@ const questionsBasic: Question[] = [
   },
   {
     id: 32,
-    prompt: 'He ___ breakfast.',
+    prompt: 'He has ___ breakfast.',
     options: [
       { value: 'a', label: 'A) ate' },
       { value: 'b', label: 'B) eaten' },
       { value: 'c', label: 'C) eat' },
     ],
-    correct: 'a',
+    correct: 'b',
   },
   {
     id: 33,
@@ -777,7 +777,7 @@ const questionsAdvanced: Question[] = [
     options: [
       { value: 'a', label: 'A) during' },
       { value: 'b', label: 'B) before' },
-      { value: 'c', label: 'C) as well' },
+      { value: 'c', label: 'C) after' },
     ],
     correct: 'b',
   },

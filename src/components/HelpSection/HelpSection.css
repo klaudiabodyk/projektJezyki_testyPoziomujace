@@ -81,3 +81,46 @@
     gap: 28px;
   }
 }
+
+@media (max-width: 768px) {
+  .help {
+    padding: 90px 18px 110px;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .help {
+    padding: 70px 14px 90px;
+  }
+
+  .help h2 {
+    font-size: clamp(1.9rem, 4vw + 1rem, 2.6rem);
+  }
+
+  .help-list {
+    gap: 22px;
+  }
+
+  .help-list li {
+    gap: 12px;
+  }
+
+  .dot {
+    width: 14px;
+    height: 14px;
+    margin-top: 8px;
+  }
+
+  .help-title {
+    font-size: 1rem;
+  }
+
+  .help-list p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+}

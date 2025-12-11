@@ -41,7 +41,19 @@
 
 @media (max-width: 900px) {
   .hero {
-    min-height: 70vh;
+    min-height: 40vh;
     padding: 48px 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 30vh;
+    padding: 32px 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 6vw + 1rem, 3.6rem);
+    letter-spacing: 0.03em;
   }
 }

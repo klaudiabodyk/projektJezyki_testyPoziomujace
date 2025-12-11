@@ -9,6 +9,7 @@ export type Question = {
   options: QuestionOption[]
   correct: string
   section?: string
+  sectionIntro?: string
 }
 
 export type QuestionGroup = {

@@ -1,0 +1,80 @@
+{
+  "common": {
+    "backToHome": "Powrót do strony głównej",
+    "backToLevelSelect": "Powrót do wyboru poziomu",
+    "startTest": "Rozpocznij test",
+    "submit": "Sprawdź wynik",
+    "reset": "Rozwiąż ponownie",
+    "questions": "pytań",
+    "points": "pkt",
+    "score": "Wynik",
+    "level": "Poziom",
+    "shareOnWhatsapp": "Udostępnij na WhatsApp",
+    "online": "Online"
+  },
+  "nav": {
+    "home": "Strona główna",
+    "tests": "Testy",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "TESTY",
+    "subtitle": "POZIOMUJĄCE"
+  },
+  "languages": {
+    "title": "Wybierz",
+    "titleHighlight": "język",
+    "titleEnd": ", który Cię interesuje",
+    "german": "NIEMIECKI",
+    "english": "ANGIELSKI"
+  },
+  "help": {
+    "title": "Jak działają testy?",
+    "description": "Nasze testy poziomujące pomogą Ci określić Twój poziom znajomości języka według skali CEFR."
+  },
+  "contact": {
+    "title": "Napisz do nas - jeszcze dziś dobierzemy grupę!",
+    "phone": "Telefon",
+    "email": "E-mail",
+    "whatsapp": "Whatsapp"
+  },
+  "test": {
+    "placementTest": "Test poziomujący",
+    "basic": "Podstawowy",
+    "advanced": "Zaawansowany",
+    "instruction": "Instrukcja",
+    "instructionText": "Zaznacz poprawną odpowiedź dla każdego pytania. Jest tylko jedna poprawna odpowiedź.",
+    "scoring": "Punktacja",
+    "emailRequired": "Adres e-mail jest wymagany przed zaznaczeniem odpowiedzi. Wynik zostanie wysłany na kontakt@joannaadamek.edu.pl.",
+    "emailPlaceholder": "Twój adres e-mail",
+    "emailInvalid": "Podaj poprawny adres e-mail",
+    "resultSent": "Wynik został wysłany na e-mail",
+    "resultSending": "Wysyłanie...",
+    "resultError": "Błąd wysyłania",
+    "unansweredQuestions": "Nie odpowiedziałeś na pytania",
+    "congratulations": "Gratulacje!",
+    "yourLevel": "Twój poziom to",
+    "checkCourses": "Sprawdź nasze kursy",
+    "shareMessage": "Ukończyłem/am test poziomujący z języka {{language}}!\n\nWynik: {{score}}/{{total}}{{percent}}\nPoziom: {{level}}\n\nSprawdź swój poziom: {{url}}"
+  },
+  "english": {
+    "title": "Test Poziomujący - Angielski",
+    "basicTest": "Test podstawowy",
+    "basicDescription": "50 pytań • Poziomy A0 - A2.1",
+    "basicTitle": "Angielski A0 - A2.1",
+    "advancedTest": "Test zaawansowany",
+    "advancedDescription": "51 pytań • Poziomy A2.2 - C1",
+    "advancedTitle": "Angielski A2.2 - C1",
+    "checkYourLevel": "Sprawdź swój poziom znajomości języka angielskiego"
+  },
+  "german": {
+    "title": "Test Poziomujący - Niemiecki",
+    "basicTest": "Test podstawowy",
+    "basicDescription": "50 pytań • Poziomy A0 - A2.1",
+    "basicTitle": "Niemiecki A0 - A2.1",
+    "advancedTest": "Test zaawansowany",
+    "advancedDescription": "51 pytań • Poziomy A2.2 - C1",
+    "advancedTitle": "Niemiecki A2.2 - C1",
+    "checkYourLevel": "Sprawdź swój poziom znajomości języka niemieckiego"
+  }
+}
