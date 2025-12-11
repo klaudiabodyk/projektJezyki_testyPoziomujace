@@ -1,0 +1,68 @@
+.languages {
+  padding: 96px 24px 120px;
+  background: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.7), transparent 35%),
+    radial-gradient(circle at 80% 10%, rgba(255, 235, 59, 0.18), transparent 40%),
+    #fdfdfd;
+  text-align: center;
+}
+
+.languages h2 {
+  margin: 0 0 48px;
+  font-size: clamp(2rem, 3vw + 1rem, 3.2rem);
+  font-weight: 700;
+  color: #3a3a3a;
+  letter-spacing: -0.01em;
+  animation: fadeInUp 0.85s ease both;
+}
+
+.languages h2 span {
+  color: #ff2c7c;
+}
+
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.language-card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 48px 24px;
+  background: linear-gradient(145deg, #ffd944, #f2c420);
+  border: 10px solid #f6ce21;
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  animation: fadeScale 0.9s ease both, floatSoft 9s ease-in-out infinite alternate;
+}
+
+.language-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.25), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.15), transparent 40%);
+  pointer-events: none;
+}
+
+.language-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 900px) {
+  .language-card {
+    font-size: 1.4rem;
+    padding: 40px 20px;
+  }
+}

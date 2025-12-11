@@ -1,0 +1,504 @@
+.german-tests-page {
+  background: #ffffff;
+  color: #1f1f1f;
+}
+
+.german-hero {
+  padding: 120px 24px 72px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.breadcrumb a {
+  color: #ff2c7c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.german-hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2.4rem, 3vw + 1rem, 3.4rem);
+  letter-spacing: -0.02em;
+}
+
+.intro {
+  margin: 0 0 32px;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.tests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.test-card {
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  padding: 18px;
+  background: #fafafa;
+  display: grid;
+  gap: 10px;
+  align-items: start;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.06);
+}
+
+.test-card.available {
+  background: linear-gradient(135deg, rgba(255, 212, 74, 0.14), #fffdf7);
+  border-color: #ffd44a;
+}
+
+.test-level {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  border-radius: 10px;
+  background: #1f1f1f;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.test-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.test-description {
+  margin: 4px 0 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.primary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff2c7c, #ff8a3d);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  box-shadow: 0 10px 26px rgba(255, 44, 124, 0.25);
+}
+
+.primary-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 34px rgba(255, 44, 124, 0.3);
+}
+
+.primary-link:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.muted-button,
+.ghost-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+  background: #f6f6f6;
+  color: #3a3a3a;
+  font-weight: 700;
+  cursor: not-allowed;
+}
+
+.ghost-button {
+  cursor: pointer;
+  background: transparent;
+}
+
+.ghost-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.german-test-body {
+  max-width: 1100px;
+  margin: 0 auto 120px;
+  padding: 48px 24px 72px;
+}
+
+.test-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.test-header h2 {
+  margin: 6px 0;
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.4rem);
+}
+
+.meta {
+  margin: 0;
+  color: #505050;
+}
+
+.meta-box {
+  padding: 14px 16px;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  background: #fafafa;
+  max-width: 320px;
+}
+
+.meta-box .secondary {
+  margin: 6px 0 0;
+  color: #777;
+}
+
+.test-form {
+  display: grid;
+  gap: 20px;
+}
+
+.question-section {
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.question-section legend {
+  padding: 0 8px;
+  font-weight: 800;
+  color: #1f1f1f;
+}
+
+.question-list {
+  display: grid;
+  gap: 16px;
+}
+
+.question-card {
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fcfcfc;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.03);
+}
+
+.question-card.correct {
+  background: #e9f9ef;
+  border-color: #1db446;
+}
+
+.question-card.incorrect {
+  background: #fff1f0;
+  border-color: #e23333;
+}
+
+.question-text {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.question-number {
+  font-weight: 800;
+  color: #ff2c7c;
+}
+
+.options-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 8px;
+}
+
+.option {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.option input {
+  accent-color: #ff2c7c;
+}
+
+.option.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.option input:disabled {
+  cursor: not-allowed;
+}
+
+.option.checked {
+  border-color: #ff2c7c;
+  box-shadow: 0 8px 22px rgba(255, 44, 124, 0.12);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+  justify-content: center;
+}
+
+.result-panel {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #ececec;
+  background: #fafafa;
+}
+
+.post-result-actions {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.offer-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 16px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ff2c7c, #ff7a59);
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 20px rgba(255, 44, 124, 0.22);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.offer-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgba(255, 44, 124, 0.28);
+}
+
+.offer-button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 16px rgba(255, 44, 124, 0.2);
+}
+
+.result-title {
+  margin: 0 0 6px;
+  font-weight: 800;
+}
+
+.result-score {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.email-status {
+  margin-top: 10px;
+  display: grid;
+  gap: 6px;
+  color: #444;
+}
+
+.whatsapp-card {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #e6f4e9;
+  background: #f5fff8;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.whatsapp-title {
+  margin: 0;
+  font-weight: 800;
+  color: #0b8a44;
+}
+
+.whatsapp-copy {
+  margin: 4px 0 0;
+  color: #2d2d2d;
+}
+
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #25d366;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 16px rgba(37, 211, 102, 0.24);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 18px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 12px rgba(37, 211, 102, 0.22);
+}
+
+.whatsapp-icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.success {
+  color: #1db446;
+  font-weight: 700;
+}
+
+.warning {
+  margin: 8px 0 0;
+  color: #c55500;
+  font-weight: 700;
+}
+
+.muted {
+  margin: 0;
+  color: #666;
+}
+
+.email-block {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  background: #fffaf3;
+}
+
+.email-label {
+  font-weight: 800;
+}
+
+.email-block input {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+  font-size: 1rem;
+}
+
+.email-helper {
+  margin: 0;
+  color: #555;
+}
+
+.email-error {
+  margin: 0;
+  color: #c55500;
+  font-weight: 700;
+}
+
+.reading-text {
+  margin: 24px 0;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #e8f4ff;
+  background: #f7fbff;
+}
+
+.reading-text h3 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1f1f1f;
+}
+
+.reading-text p {
+  margin: 0 0 12px;
+  line-height: 1.6;
+  color: #2d2d2d;
+}
+
+.reading-text p:last-child {
+  margin-bottom: 0;
+}
+
+.reading-text strong {
+  color: #ff2c7c;
+  font-weight: 800;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  margin-bottom: 32px;
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+  background: #f6f6f6;
+  color: #3a3a3a;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.back-button:hover {
+  background: #ececec;
+  border-color: #b8b8b8;
+}
+
+.back-button:active {
+  background: #e0e0e0;
+}
+
+@media (max-width: 860px) {
+  .test-header {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .tests-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+}
