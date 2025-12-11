@@ -95,12 +95,12 @@ const questionsA1: Question[] = [
     section: 'Pytania 1-14',
     prompt: 'Wer ___ das? Das ___ meine Geschwister.',
     options: [
-      { value: 'a', label: 'a) ist meine' },
-      { value: 'b', label: 'b) sind meine' },
-      { value: 'c', label: 'c) sind mein' },
-      { value: 'd', label: 'd) ist sein' },
+      { value: 'a', label: 'a) ist... sind' },
+      { value: 'b', label: 'b) sind... ist' },
+      { value: 'c', label: 'c) ist... ist' },
+      { value: 'd', label: 'd) sind... sind' },
     ],
-    correct: 'b',
+    correct: 'a',
   },
   {
     id: 9,
@@ -129,7 +129,7 @@ const questionsA1: Question[] = [
   {
     id: 11,
     section: 'Pytania 1-14',
-    prompt: 'Ist das ein Buch? Nein, das ist ____',
+    prompt: 'Ist das ein Buch? Nein, das ist ____ Buch.',
     options: [
       { value: 'a', label: 'a) keine' },
       { value: 'b', label: 'b) nicht' },
@@ -201,12 +201,12 @@ const questionsA1: Question[] = [
   {
     id: 17,
     section: 'Pytania 15-25',
-    prompt: 'Was sind Ihre Hobbys? Meine Hobbys sind Ski fahren und Musik hören.',
+    prompt: 'Was sind Ihre Hobbys? Meine Hobbys sind Ski ____ und Musik ____.',
     options: [
-      { value: 'a', label: 'a) treffen singen' },
-      { value: 'b', label: 'b) fahren singen' },
-      { value: 'c', label: 'c) fahren hören' },
-      { value: 'd', label: 'd) fahre höre' },
+      { value: 'a', label: 'a) treffen... singen' },
+      { value: 'b', label: 'b) fahren... singen' },
+      { value: 'c', label: 'c) fahren... hören' },
+      { value: 'd', label: 'd) fahre... höre' },
     ],
     correct: 'c',
   },
@@ -249,7 +249,7 @@ const questionsA1: Question[] = [
   {
     id: 21,
     section: 'Pytania 15-25',
-    prompt: 'Isst du gern Fleisch? Nein, nicht so gern.',
+    prompt: 'Isst du gern Fleisch? ____',
     options: [
       { value: 'a', label: 'a) Danke, ebenfalls.' },
       { value: 'b', label: 'b) Nein, nie.' },
@@ -297,12 +297,12 @@ const questionsA1: Question[] = [
   {
     id: 25,
     section: 'Pytania 15-25',
-    prompt: 'Ich ___ erst um 22 Uhr nach Hause gefahren.',
+    prompt: 'Ich ____ erst um 22 Uhr nach Hause ____.',
     options: [
-      { value: 'a', label: 'a) bin gefahren' },
-      { value: 'b', label: 'b) ist fahren' },
-      { value: 'c', label: 'c) ist gefahren' },
-      { value: 'd', label: 'd) hat gefahren' },
+      { value: 'a', label: 'a) bin... gefahren' },
+      { value: 'b', label: 'b) ist... fahren' },
+      { value: 'c', label: 'c) ist... gefahren' },
+      { value: 'd', label: 'd) hat... gefahren' },
     ],
     correct: 'a',
   },
@@ -321,12 +321,12 @@ const questionsA1: Question[] = [
   {
     id: 27,
     section: 'Pytania 26-39',
-    prompt: 'Entschuldigung! Ich suche das Hotel Ibis. Fahren Sie zuerst geradeaus und biegen Sie dann nach ____.',
+    prompt: 'Entschuldigung! Ich suche das Hotel Ibis. Fahren Sie zuerst ____ ☝️ und biegen Sie dann nach ____ 👉.',
     options: [
-      { value: 'a', label: 'a) rechts' },
-      { value: 'b', label: 'b) zurück rechts' },
-      { value: 'c', label: 'c) links' },
-      { value: 'd', label: 'd) einen Kilometer rechts' },
+      { value: 'a', label: 'a) geradeaus... rechts' },
+      { value: 'b', label: 'b) links... geradeaus' },
+      { value: 'c', label: 'c) geradeaus... links' },
+      { value: 'd', label: 'd) rechts... links' },
     ],
     correct: 'c',
   },
@@ -357,7 +357,7 @@ const questionsA1: Question[] = [
   {
     id: 30,
     section: 'Pytania 26-39',
-    prompt: 'Ich fahre jedes Jahr einmal nach Italien. Wirklich? Was _____ dir so gut an der Stadt?',
+    prompt: 'Ich fahre jedes Jahr einmal nach Italien. Wirklich? Was ____ so gut an der Stadt?',
     options: [
       { value: 'a', label: 'a) gefällst du' },
       { value: 'b', label: 'b) gefällst dir' },
@@ -503,10 +503,10 @@ const questionsA1: Question[] = [
     section: 'Pytania 40-47',
     prompt: 'Der Pulli gefällt mir besser ____ die Mütze. Aber _____ gefällt mir das Kleid.',
     options: [
-      { value: 'a', label: 'a) wie am meisten' },
-      { value: 'b', label: 'b) als am besten' },
-      { value: 'c', label: 'c) als am meisten' },
-      { value: 'd', label: 'd) wie am besten' },
+      { value: 'a', label: 'a) wie... am meisten' },
+      { value: 'b', label: 'b) als... am besten' },
+      { value: 'c', label: 'c) als... am meisten' },
+      { value: 'd', label: 'd) wie... am besten' },
     ],
     correct: 'b',
   },
@@ -549,7 +549,7 @@ const questionsA1: Question[] = [
   {
     id: 46,
     section: 'Pytania 40-47',
-    prompt: 'Welches Datum ist heute? Der _____ Januar (7.1)',
+    prompt: 'Welches Datum ist heute? _____ Januar (7.1)',
     options: [
       { value: 'a', label: 'a) Der sieben' },
       { value: 'b', label: 'b) Das siebte' },
@@ -573,12 +573,18 @@ const questionsA1: Question[] = [
   {
     id: 48,
     section: 'Pytania 48-50',
+    sectionIntro: `📖 Przeczytaj tekst i odpowiedz Richtig (prawda) lub Falsch (fałsz):
+
+„Lieber Nikolas,
+wir haben endlich eine neue Wohnung gefunden! Sie hat einen großen Garten. Am Samstag machen wir eine Party. Kommst du? Unsere Katze Mimi freut sich auch schon auf dich!
+Liebe Grüße,
+Hanna und Tobias"`,
     prompt: 'Nikolas feiert in seinem Garten eine Party.',
     options: [
       { value: 'r', label: 'Richtig' },
       { value: 'f', label: 'Falsch' },
     ],
-    correct: 'r',
+    correct: 'f',
   },
   {
     id: 49,
@@ -618,7 +624,7 @@ const questionsA2: Question[] = [
   {
     id: 52,
     section: 'Pytania 51-63',
-    prompt: 'Kennt ihr eigentlich schon meine Freunde? Auf diesem Foto siehst du unser__ Nachbern mit sein__ neuen Frau.',
+    prompt: 'Kennt ihr eigentlich schon meine Freunde? Auf diesem Foto siehst du unser__ Nachbarn mit sein__ neuen Frau.',
     options: [
       { value: 'a', label: 'a) -n -en' },
       { value: 'b', label: 'b) -en -en' },
@@ -630,7 +636,7 @@ const questionsA2: Question[] = [
   {
     id: 53,
     section: 'Pytania 51-63',
-    prompt: 'Wo ist denn der neue Spiegel? Das ____ doch schon über dem Bett.',
+    prompt: 'Wo ist denn der neue Spiegel? Der ____ doch schon über dem Bett.',
     options: [
       { value: 'a', label: 'a) liegt' },
       { value: 'b', label: 'b) hängt' },
@@ -733,17 +739,17 @@ const questionsA2: Question[] = [
       { value: 'c', label: 'c) über' },
       { value: 'd', label: 'd) für' },
     ],
-    correct: 'b',
+    correct: 'c',
   },
   {
     id: 62,
     section: 'Pytania 51-63',
     prompt: 'Wie lange lernst du schon Italienisch? _____ einem Monat.',
     options: [
-      { value: 'a', label: 'a) Seit einem' },
-      { value: 'b', label: 'b) Seit ein' },
-      { value: 'c', label: 'c) Vor einem' },
-      { value: 'd', label: 'd) über einem' },
+      { value: 'a', label: 'a) Seit' },
+      { value: 'b', label: 'b) Vor' },
+      { value: 'c', label: 'c) Über' },
+      { value: 'd', label: 'd) Für' },
     ],
     correct: 'a',
   },
@@ -786,7 +792,7 @@ const questionsA2: Question[] = [
   {
     id: 66,
     section: 'Pytania 64-75',
-    prompt: 'Ich habe gestern bis spät in die Nacht netflixen. _____ bin ich so müde.',
+    prompt: 'Ich habe gestern bis spät in die Nacht genetflixt. _____ bin ich so müde.',
     options: [
       { value: 'a', label: 'a) Denn' },
       { value: 'b', label: 'b) Dann' },
@@ -930,7 +936,7 @@ const questionsA2: Question[] = [
   {
     id: 78,
     section: 'Pytania 76-97',
-    prompt: 'Die Kollegen haben mir geholfen, immer _____ ich eine Bitte hatte.',
+    prompt: 'Die Kollegen haben mir geholfen, _____ ich eine Bitte hatte.',
     options: [
       { value: 'a', label: 'a) dann als' },
       { value: 'b', label: 'b) immer als' },
@@ -954,7 +960,7 @@ const questionsA2: Question[] = [
   {
     id: 80,
     section: 'Pytania 76-97',
-    prompt: 'Die Waren _____ schon morgens _____.',
+    prompt: 'Die Waren ______.',
     options: [
       { value: 'a', label: 'a) schon werden morgens ausgeliefert' },
       { value: 'b', label: 'b) werden schon morgens ausgeliefert' },
@@ -1004,12 +1010,12 @@ const questionsA2: Question[] = [
     section: 'Pytania 76-97',
     prompt: 'Gehen Sie durch ___ Glastür und an ___ Frühstücksraum vorbei. Gegenüber von ____ Treppe ist der Fitnessraum.',
     options: [
-      { value: 'a', label: 'a) die den der' },
-      { value: 'b', label: 'b) der die der' },
-      { value: 'c', label: 'c) die der der' },
-      { value: 'd', label: 'd) die dem die' },
+      { value: 'a', label: 'a) die... dem... der' },
+      { value: 'b', label: 'b) der... die... der' },
+      { value: 'c', label: 'c) die... der... der' },
+      { value: 'd', label: 'd) die... dem... die' },
     ],
-    correct: 'c',
+    correct: 'a',
   },
   {
     id: 85,
@@ -1040,10 +1046,10 @@ const questionsA2: Question[] = [
     section: 'Pytania 76-97',
     prompt: 'Hast du Lust ____ einen heißen Tee?',
     options: [
-      { value: 'a', label: 'a) für eine' },
-      { value: 'b', label: 'b) mit einer' },
-      { value: 'c', label: 'c) über eine' },
-      { value: 'd', label: 'd) auf eine' },
+      { value: 'a', label: 'a) für' },
+      { value: 'b', label: 'b) mit' },
+      { value: 'c', label: 'c) über' },
+      { value: 'd', label: 'd) auf' },
     ],
     correct: 'd',
   },
@@ -1064,24 +1070,24 @@ const questionsA2: Question[] = [
     section: 'Pytania 76-97',
     prompt: 'Hallo Heike, du siehst heute aber nicht gut aus. Nein, ich komme gerade ____ Arzt. Ich muss ___ Bett bleiben.',
     options: [
-      { value: 'a', label: 'a) vom ins' },
-      { value: 'b', label: 'b) beim in' },
-      { value: 'c', label: 'c) von der ins' },
-      { value: 'd', label: 'd) vom im' },
+      { value: 'a', label: 'a) vom... ins' },
+      { value: 'b', label: 'b) beim... in' },
+      { value: 'c', label: 'c) von der... ins' },
+      { value: 'd', label: 'd) vom... im' },
     ],
-    correct: 'a',
+    correct: 'd',
   },
   {
     id: 90,
     section: 'Pytania 76-97',
     prompt: 'Als Kind _____ ich keine Computerspiele spielen. Ich _____ viel lernen.',
     options: [
-      { value: 'a', label: 'a) mochte … musste' },
-      { value: 'b', label: 'b) musste … sollte' },
-      { value: 'c', label: 'c) wollte … musste' },
-      { value: 'd', label: 'd) durfte … sollte' },
+      { value: 'a', label: 'a) mochte... musste' },
+      { value: 'b', label: 'b) musste... sollte' },
+      { value: 'c', label: 'c) wollte... musste' },
+      { value: 'd', label: 'd) durfte... sollte' },
     ],
-    correct: 'a',
+    correct: 'd',
   },
   {
     id: 91,
@@ -1170,6 +1176,13 @@ const questionsA2: Question[] = [
   {
     id: 98,
     section: 'Pytania 98-100',
+    sectionIntro: `📖 Przeczytaj dyskusję na forum i odpowiedz Richtig (prawda) lub Falsch (fałsz):
+
+HaniNeu: Was habt Ihr nach der Schule gemacht? Seid Ihr ins Ausland gegangen oder habt Ihr gleich weitergelernt oder gearbeitet? Ich mache im Mai Abitur und weiß nicht, was ich machen soll.
+
+Loco97: Ich habe nach der Schule ein Jahr lang in Rom in einem Restaurant gearbeitet. Ich wurde selbständig und mein erstes Geld verdient.
+
+Jimmy: Ich bin in einem halben Jahr mit dem Studium fertig. Danach möchte ich eine Arbeit finden, am liebsten in einem Hotel. Vielleicht kaufe ich eine Wohnung, wenn ich einen Kredit bekomme.`,
     prompt: 'HaniNeu geht noch zur Schule.',
     options: [
       { value: 'r', label: 'Richtig' },
@@ -1217,12 +1230,12 @@ const questionsB1: Question[] = [
     section: 'Pytania 101-113',
     prompt: 'Hast du schon unseren neuen Nachbar___ erlebt? Er ist ein sehr interessanter Mensch___.',
     options: [
-      { value: 'a', label: 'a) -en' },
-      { value: 'b', label: 'b) -n' },
-      { value: 'c', label: 'c) -n -en' },
-      { value: 'd', label: 'd) -en -en' },
+      { value: 'a', label: 'a) -en... -en' },
+      { value: 'b', label: 'b) -n... -' },
+      { value: 'c', label: 'c) -n... -en' },
+      { value: 'd', label: 'd) -en... -' },
     ],
-    correct: 'd',
+    correct: 'b',
   },
   {
     id: 103,
@@ -1299,7 +1312,7 @@ const questionsB1: Question[] = [
   {
     id: 109,
     section: 'Pytania 101-113',
-    prompt: 'Luna, du _____ jetzt endlich Sitz _____? Mein Hund will nicht hören!',
+    prompt: 'Luna, du _____ jetzt endlich Sitz _____! Mein Hund will nicht hören!',
     options: [
       { value: 'a', label: 'a) sollst machen' },
       { value: 'b', label: 'b) darfst machen' },
@@ -1397,12 +1410,12 @@ const questionsB1: Question[] = [
     section: 'Pytania 114-125',
     prompt: 'Das _____ Haus gefällt mir gut. Es ist aber auch teuer. Stimmt. Und ich würde mich auch in einem _____ Haus wohlfühlen.',
     options: [
-      { value: 'a', label: 'a) größeren kleinere' },
-      { value: 'b', label: 'b) größere kleineren' },
-      { value: 'c', label: 'c) größer kleiner' },
-      { value: 'd', label: 'd) größeren kleineren' },
+      { value: 'a', label: 'a) größeren... kleinere' },
+      { value: 'b', label: 'b) größere... kleineren' },
+      { value: 'c', label: 'c) größer... kleiner' },
+      { value: 'd', label: 'd) größeren... kleineren' },
     ],
-    correct: 'd',
+    correct: 'b',
   },
   {
     id: 118,
@@ -1565,24 +1578,24 @@ const questionsB1: Question[] = [
     section: 'Pytania 126-147',
     prompt: 'Das Fitnessstudio ist ___ bei jungen Leuten ___ bei Senioren sehr beliebt.',
     options: [
-      { value: 'a', label: 'a) nicht nur – aber auch' },
-      { value: 'b', label: 'b) sowohl – als auch' },
-      { value: 'c', label: 'c) zwar – aber' },
-      { value: 'd', label: 'd) weder – noch' },
+      { value: 'a', label: 'a) sowohl... als auch' },
+      { value: 'b', label: 'b) einerseits... andererseits' },
+      { value: 'c', label: 'c) zwar... aber' },
+      { value: 'd', label: 'd) weder... noch' },
     ],
-    correct: 'b',
+    correct: 'a',
   },
   {
     id: 132,
     section: 'Pytania 126-147',
     prompt: 'Im Alltag ___ ich mich um meine Finanzen selbst ___.',
     options: [
-      { value: 'a', label: 'a) brauche zu kümmern' },
-      { value: 'b', label: 'b) brauche kümmern' },
-      { value: 'c', label: 'c) muss zu kümmern' },
-      { value: 'd', label: 'd) muss kümmern' },
+      { value: 'a', label: 'a) brauche... zu kümmern' },
+      { value: 'b', label: 'b) brauche... kümmern' },
+      { value: 'c', label: 'c) muss... zu kümmern' },
+      { value: 'd', label: 'd) muss... kümmern' },
     ],
-    correct: 'b',
+    correct: 'a',
   },
   {
     id: 133,
@@ -1599,10 +1612,10 @@ const questionsB1: Question[] = [
   {
     id: 134,
     section: 'Pytania 126-147',
-    prompt: 'Beeilen wir uns ein bisschen. ___ wird gleich dunkel.',
+    prompt: 'Beeilen wir uns ein bisschen. _____ gleich dunkel.',
     options: [
       { value: 'a', label: 'a) Man ist' },
-      { value: 'b', label: 'b) Es ist' },
+      { value: 'b', label: 'b) Es wird' },
       { value: 'c', label: 'c) Das hat' },
       { value: 'd', label: 'd) Wir sind' },
     ],
@@ -1623,12 +1636,12 @@ const questionsB1: Question[] = [
   {
     id: 136,
     section: 'Pytania 126-147',
-    prompt: '___ das Wetter schlecht war, ___ hatten wir einen schönen Abend.',
+    prompt: 'Das Wetter war ______ schlecht, ______ hatten wir einen schönen Abend.',
     options: [
-      { value: 'a', label: 'a) Sowohl – als auch' },
-      { value: 'b', label: 'b) Zwar – aber' },
-      { value: 'c', label: 'c) Entweder – oder' },
-      { value: 'd', label: 'd) Weder – noch' },
+      { value: 'a', label: 'a) sowohl... als auch' },
+      { value: 'b', label: 'b) zwar... aber' },
+      { value: 'c', label: 'c) entweder... oder' },
+      { value: 'd', label: 'd) weder... noch' },
     ],
     correct: 'b',
   },
@@ -1649,10 +1662,10 @@ const questionsB1: Question[] = [
     section: 'Pytania 126-147',
     prompt: '___ mehr Zeit man investiert, ___ besser wird das Ergebnis.',
     options: [
-      { value: 'a', label: 'a) Je – desto' },
-      { value: 'b', label: 'b) Umso – desto' },
-      { value: 'c', label: 'c) Desto – je' },
-      { value: 'd', label: 'd) Je – umso' },
+      { value: 'a', label: 'a) Je... desto' },
+      { value: 'b', label: 'b) Umso... desto' },
+      { value: 'c', label: 'c) Desto... je' },
+      { value: 'd', label: 'd) Je... um' },
     ],
     correct: 'a',
   },
@@ -1719,12 +1732,12 @@ const questionsB1: Question[] = [
   {
     id: 144,
     section: 'Pytania 126-147',
-    prompt: 'Der Vertrag ___ bis Ende des Monats ____',
+    prompt: 'Der Vertrag ___ bis Ende des Monats ____.',
     options: [
-      { value: 'a', label: 'a) muss unterschrieben sein' },
-      { value: 'b', label: 'b) müssen unterschreiben' },
-      { value: 'c', label: 'c) muss unterschreiben' },
-      { value: 'd', label: 'd) muss unterschrieben haben' },
+      { value: 'a', label: 'a) muss... unterschrieben werden' },
+      { value: 'b', label: 'b) müssen... unterschreiben' },
+      { value: 'c', label: 'c) muss... unterschreiben' },
+      { value: 'd', label: 'd) muss... unterschrieben haben' },
     ],
     correct: 'a',
   },
@@ -1745,12 +1758,12 @@ const questionsB1: Question[] = [
     section: 'Pytania 126-147',
     prompt: 'Er fährt mit dem Fahrrad zur Arbeit, ___ das Auto ___ benutzen.',
     options: [
-      { value: 'a', label: 'a) ohne dass' },
-      { value: 'b', label: 'b) statt dass' },
-      { value: 'c', label: 'c) ohne zu' },
-      { value: 'd', label: 'd) statt zu' },
+      { value: 'a', label: 'a) ohne... dass' },
+      { value: 'b', label: 'b) statt... dass' },
+      { value: 'c', label: 'c) ohne... zu' },
+      { value: 'd', label: 'd) statt... zu' },
     ],
-    correct: 'd',
+    correct: 'c',
   },
   {
     id: 147,
@@ -1826,24 +1839,24 @@ const questionsB2: Question[] = [
     section: 'Pytania 151-163',
     prompt: '___ treffe ich mich mit meiner Familie zum gemeinsamen Mittagessen.',
     options: [
-      { value: 'a', label: 'a) Sonntags' },
+      { value: 'a', label: 'a) Sonntag' },
       { value: 'b', label: 'b) Jeden Sonntag' },
-      { value: 'c', label: 'c) Am Sonntag' },
+      { value: 'c', label: 'c) Ab Sonntag' },
       { value: 'd', label: 'd) Letzten Sonntag' },
     ],
-    correct: 'a',
+    correct: 'b',
   },
   {
     id: 154,
     section: 'Pytania 151-163',
     prompt: 'Kennst du schon das neue Restaurant am Marktplatz? Natürlich! Die haben wirklich den best__ Kuchen der Stadt. … Und die nettest__ Bedienung, finde ich.',
     options: [
-      { value: 'a', label: 'a) -en … -es' },
-      { value: 'b', label: 'b) -e … -e' },
-      { value: 'c', label: 'c) -em … -en' },
-      { value: 'd', label: 'd) -es … -e' },
+      { value: 'a', label: 'a) -en... -e' },
+      { value: 'b', label: 'b) -e... -e' },
+      { value: 'c', label: 'c) -em... -en' },
+      { value: 'd', label: 'd) -es... -e' },
     ],
-    correct: 'b',
+    correct: 'a',
   },
   {
     id: 155,
@@ -1862,10 +1875,10 @@ const questionsB2: Question[] = [
     section: 'Pytania 151-163',
     prompt: 'Sag mal, warst du ____ gestern an der Uni? Ich hab dich gar nicht gesehen. Ich saß ___ auch ganz hinten.',
     options: [
-      { value: 'a', label: 'a) doch denn' },
-      { value: 'b', label: 'b) eigentlich ja' },
-      { value: 'c', label: 'c) ja mal' },
-      { value: 'd', label: 'd) mal eigentlich' },
+      { value: 'a', label: 'a) doch - denn' },
+      { value: 'b', label: 'b) eigentlich - ja' },
+      { value: 'c', label: 'c) ja - mal' },
+      { value: 'd', label: 'd) mal - eigentlich' },
     ],
     correct: 'b',
   },
@@ -1936,7 +1949,7 @@ const questionsB2: Question[] = [
     options: [
       { value: 'a', label: 'a) die Mutter brauchte ihnen nichts zuzubereiten' },
       { value: 'b', label: 'b) die Mutter brauchte ihnen nichts zu zubereiten' },
-      { value: 'c', label: 'c) brauchte die Mutter ihnen nichts zu zubereiten' },
+      { value: 'c', label: 'c) brauchte die Mutter ihnen nichts zuzubereiten' },
       { value: 'd', label: 'd) die Mutter ihnen nichts zuzubereiten' },
     ],
     correct: 'c',
@@ -2066,10 +2079,10 @@ const questionsB2: Question[] = [
     section: 'Pytania 164-175',
     prompt: 'Sag mal, willst du dich nicht auf die Stelle bewerben? - Arbeit in einer Schule? Das ___ nicht ____.',
     options: [
-      { value: 'a', label: 'a) geht zu Recht' },
-      { value: 'b', label: 'b) hat möglich' },
-      { value: 'c', label: 'c) ist zur Sache' },
-      { value: 'd', label: 'd) kommt infrage' },
+      { value: 'a', label: 'a) geht - zu Recht' },
+      { value: 'b', label: 'b) hat - möglich' },
+      { value: 'c', label: 'c) ist - zur Sache' },
+      { value: 'd', label: 'd) kommt - infrage' },
     ],
     correct: 'd',
   },
@@ -2177,7 +2190,7 @@ const questionsB2: Question[] = [
       { value: 'a', label: 'a) Dank' },
       { value: 'b', label: 'b) Aufgrund' },
       { value: 'c', label: 'c) Aus' },
-      { value: 'd', label: 'd) Wegen' },
+      { value: 'd', label: 'd) Während' },
     ],
     correct: 'b',
   },
@@ -2215,7 +2228,7 @@ const questionsB2: Question[] = [
       { value: 'c', label: 'c) unbekannterweise' },
       { value: 'd', label: 'd) probehalber' },
     ],
-    correct: 'a',
+    correct: 'b',
   },
   {
     id: 186,
@@ -2294,12 +2307,12 @@ const questionsB2: Question[] = [
     section: 'Pytania 176-200',
     prompt: 'An deiner Stelle ___ ich mich zunächst für ein Praktikum ___ .',
     options: [
-      { value: 'a', label: 'a) könnte – bewerben' },
-      { value: 'b', label: 'b) sollte – bewerben' },
-      { value: 'c', label: 'c) wäre – beworben' },
-      { value: 'd', label: 'd) würde – bewirbst' },
+      { value: 'a', label: 'a) könnte... bewerben' },
+      { value: 'b', label: 'b) sollte... bewerben' },
+      { value: 'c', label: 'c) wäre... beworben' },
+      { value: 'd', label: 'd) würde... bewerben' },
     ],
-    correct: 'a',
+    correct: 'd',
   },
   {
     id: 193,
@@ -2364,7 +2377,7 @@ const questionsB2: Question[] = [
   {
     id: 198,
     section: 'Pytania 176-200',
-    prompt: 'Der neue Teamleiter soll sehr beliebt ___ allen Mitarbeitern ___.',
+    prompt: 'Der neue Teamleiter soll sehr beliebt ___ allen Mitarbeitern sein.',
     options: [
       { value: 'a', label: 'a) an' },
       { value: 'b', label: 'b) bei' },
@@ -2446,7 +2459,7 @@ const questionsC1: Question[] = [
       { value: 'c', label: 'c) zerfallen' },
       { value: 'd', label: 'd) gewidmet' },
     ],
-    correct: 'd',
+    correct: 'b',
   },
   {
     id: 205,
@@ -2501,12 +2514,12 @@ const questionsC1: Question[] = [
     section: 'Pytania 201-213',
     prompt: 'Wohin magst du denn am liebsten fahren? Ach, weißt du, nur reiz__ Landschaften und nach__ Tourismus kommen infrage. Irland wäre mein nächstes Reiseziel.',
     options: [
-      { value: 'a', label: 'a) -haltige -rangiger' },
-      { value: 'b', label: 'b) -volle -haltiger' },
-      { value: 'c', label: 'c) -volle -rangiger' },
-      { value: 'd', label: 'd) -werte -haltiger' },
+      { value: 'a', label: 'a) -haltige... -rangiger' },
+      { value: 'b', label: 'b) -volle... -haltiger' },
+      { value: 'c', label: 'c) -volle... -rangiger' },
+      { value: 'd', label: 'd) -werte... -haltiger' },
     ],
-    correct: 'c',
+    correct: 'b',
   },
   {
     id: 210,
@@ -2537,12 +2550,12 @@ const questionsC1: Question[] = [
     section: 'Pytania 201-213',
     prompt: 'Hast du die Nachricht gelesen? Die Personalabteilung plant, sämtliche neu__ Bewerber einen Eignungstest absolvieren zu lassen. Ja, einige interessiert__ Kollegen halten ihn für sinnvoll, wenn man keine aufwendig__ Vorstellungsgespräche führen muss.',
     options: [
-      { value: 'a', label: 'a) -en -en' },
-      { value: 'b', label: 'b) -en -e' },
-      { value: 'c', label: 'c) -e -en' },
-      { value: 'd', label: 'd) -e -e' },
+      { value: 'a', label: 'a) -en... -e... -en' },
+      { value: 'b', label: 'b) -en... -en... -e' },
+      { value: 'c', label: 'c) -e... -en... -en' },
+      { value: 'd', label: 'd) -e... -e... -e' },
     ],
-    correct: 'c',
+    correct: 'a',
   },
   {
     id: 213,
@@ -2602,17 +2615,17 @@ const questionsC1: Question[] = [
       { value: 'c', label: 'c) aufsetzen' },
       { value: 'd', label: 'd) erzwingen' },
     ],
-    correct: 'a',
+    correct: 'b',
   },
   {
     id: 218,
     section: 'Pytania 214-225',
     prompt: '___ amtlicher Mitteilung wird die Straßenbahnlinie 5 ab Montag für voraussichtlich zwei Wochen aufgrund von Bauarbeiten eingestellt.',
     options: [
-      { value: 'a', label: 'a) laut' },
-      { value: 'b', label: 'b) nach' },
-      { value: 'c', label: 'c) nachfolgend' },
-      { value: 'd', label: 'd) entsprechend' },
+      { value: 'a', label: 'a) Laut' },
+      { value: 'b', label: 'b) Nach' },
+      { value: 'c', label: 'c) Nachfolgend' },
+      { value: 'd', label: 'd) Entsprechend' },
     ],
     correct: 'a',
   },
@@ -2645,10 +2658,10 @@ const questionsC1: Question[] = [
     section: 'Pytania 214-225',
     prompt: 'Die Nachfrage nach Elektroautos steigt kontinuierlich, _____ investieren immer mehr Hersteller in die Entwicklung neuer Batterietechnologien.',
     options: [
-      { value: 'a', label: 'a) Daraufhin' },
-      { value: 'b', label: 'b) Dementsprechend' },
-      { value: 'c', label: 'c) Folgend' },
-      { value: 'd', label: 'd) Nachdem' },
+      { value: 'a', label: 'a) daraufhin' },
+      { value: 'b', label: 'b) dementsprechend' },
+      { value: 'c', label: 'c) folgend' },
+      { value: 'd', label: 'd) nachdem' },
     ],
     correct: 'b',
   },
@@ -3266,9 +3279,12 @@ const GermanTestsPage = () => {
             {emailErrorA1 ? <p className="email-error">{emailErrorA1}</p> : null}
           </div>
 
-          {groupedQuestionsA1.map(([section, sectionQuestions]) => (
+          {groupedQuestionsA1.map(([section, sectionQuestions]) => {
+            const intro = sectionQuestions.find((q) => q.sectionIntro)?.sectionIntro
+            return (
             <fieldset key={section} className="question-section">
               <legend>{section}</legend>
+              {intro && <div className="section-intro">{intro}</div>}
               <div className="question-list">
                 {sectionQuestions.map((question) => (
                   <div
@@ -3313,7 +3329,7 @@ const GermanTestsPage = () => {
                 ))}
               </div>
             </fieldset>
-          ))}
+          )})}
 
           <div className="form-actions">
             <button type="submit" className="primary-link" disabled={!canStartA1}>
@@ -3422,16 +3438,12 @@ const GermanTestsPage = () => {
             {emailErrorA2 ? <p className="email-error">{emailErrorA2}</p> : null}
           </div>
 
-          <div className="reading-text">
-            <h3>Tekst do pytań 98-100</h3>
-            <p><strong>HaniNeu:</strong> Was habt Ihr nach der Schule gemacht? Seid Ihr ins Ausland gegangen oder habt Ihr gleich weitergelernt oder gearbeitet? Ich mache im Mai Abitur und weiß nicht, was ich machen soll.</p>
-            <p><strong>Loco97:</strong> Ich habe nach der Schule ein Jahr lang in Rom in einem Restaurant gearbeitet. Ich wurde selbständig und mein erstes Geld verdient.</p>
-            <p><strong>Jimmy:</strong> Ich bin in einem halben Jahr mit dem Studium fertig. Danach möchte ich eine Arbeit finden, am liebsten in einem Hotel. Vielleicht kaufe ich eine Wohnung, wenn ich einen Kredit bekomme.</p>
-          </div>
-
-          {groupedQuestionsA2.map(([section, sectionQuestions]) => (
+          {groupedQuestionsA2.map(([section, sectionQuestions]) => {
+            const intro = sectionQuestions.find((q) => q.sectionIntro)?.sectionIntro
+            return (
             <fieldset key={section} className="question-section">
               <legend>{section}</legend>
+              {intro && <div className="section-intro">{intro}</div>}
               <div className="question-list">
                 {sectionQuestions.map((question) => (
                   <div
@@ -3476,7 +3488,7 @@ const GermanTestsPage = () => {
                 ))}
               </div>
             </fieldset>
-          ))}
+          )})}
 
           <div className="form-actions">
             <button type="submit" className="primary-link" disabled={!canStartA2}>
