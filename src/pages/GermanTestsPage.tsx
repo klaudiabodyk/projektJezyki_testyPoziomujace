@@ -1,8 +1,6 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
-import TestForm from '../components/Test/TestForm'
-import type { Question, QuestionGroup } from '../components/Test/types'
-import { useTestState } from '../hooks/useTestState'
+import type { Question } from '../components/Test/types'
 import whatsappLogo from '../assets/whatsapp.png'
 import SectionWrapper from '../components/SectionWrapper/SectionWrapper'
 import './GermanTestsPage.css'
@@ -2704,29 +2702,6 @@ const questionsC1: Question[] = [
   },
 ]
 
-const emailHelperText =
-  'Adres e-mail jest wymagany przed zaznaczeniem odpowiedzi. Wynik zostanie wysłany na kontakt@joannaadamek.edu.pl.'
-
-const germanShareConfig = (levelLabel: string) => ({
-  buildMessage: (score: number, total: number, percent: number | null) =>
-    `Mój wynik testu poziomującego ${levelLabel} (niemiecki) to : ${score}/${total}${
-      percent !== null ? ` (${percent}%)` : ''
-    }. Pomóż mi dobrać grupę!`,
-  baseUrl: 'https://wa.me/48512253179?text=',
-  fallbackUrl: 'https://wa.me/48512253179',
-})
-
-const groupQuestionsBySection = (questions: Question[]): QuestionGroup[] => {
-  const map = new Map<string, Question[]>()
-  questions.forEach((question) => {
-    const key = question.section ?? 'Pytania'
-    const group = map.get(key) ?? []
-    group.push(question)
-    map.set(key, group)
-  })
-  return Array.from(map.entries()).map(([title, qs]) => ({ title, questions: qs }))
-}
-
 const tests = [
   {
     level: 'A1',
@@ -2827,10 +2802,11 @@ const GermanTestsPage = () => {
   const groupedQuestionsA1 = useMemo(() => {
     const map = new Map<string, Question[]>()
     questionsA1.forEach((question) => {
-      if (!map.has(question.section)) {
-        map.set(question.section, [])
+      const key = question.section ?? 'Pytania'
+      if (!map.has(key)) {
+        map.set(key, [])
       }
-      map.get(question.section)!.push(question)
+      map.get(key)!.push(question)
     })
     return Array.from(map.entries())
   }, [])
@@ -2838,10 +2814,11 @@ const GermanTestsPage = () => {
   const groupedQuestionsA2 = useMemo(() => {
     const map = new Map<string, Question[]>()
     questionsA2.forEach((question) => {
-      if (!map.has(question.section)) {
-        map.set(question.section, [])
+      const key = question.section ?? 'Pytania'
+      if (!map.has(key)) {
+        map.set(key, [])
       }
-      map.get(question.section)!.push(question)
+      map.get(key)!.push(question)
     })
     return Array.from(map.entries())
   }, [])
@@ -2849,10 +2826,11 @@ const GermanTestsPage = () => {
   const groupedQuestionsB1 = useMemo(() => {
     const map = new Map<string, Question[]>()
     questionsB1.forEach((question) => {
-      if (!map.has(question.section)) {
-        map.set(question.section, [])
+      const key = question.section ?? 'Pytania'
+      if (!map.has(key)) {
+        map.set(key, [])
       }
-      map.get(question.section)!.push(question)
+      map.get(key)!.push(question)
     })
     return Array.from(map.entries())
   }, [])
@@ -2860,10 +2838,11 @@ const GermanTestsPage = () => {
   const groupedQuestionsB2 = useMemo(() => {
     const map = new Map<string, Question[]>()
     questionsB2.forEach((question) => {
-      if (!map.has(question.section)) {
-        map.set(question.section, [])
+      const key = question.section ?? 'Pytania'
+      if (!map.has(key)) {
+        map.set(key, [])
       }
-      map.get(question.section)!.push(question)
+      map.get(key)!.push(question)
     })
     return Array.from(map.entries())
   }, [])
@@ -2871,10 +2850,11 @@ const GermanTestsPage = () => {
   const groupedQuestionsC1 = useMemo(() => {
     const map = new Map<string, Question[]>()
     questionsC1.forEach((question) => {
-      if (!map.has(question.section)) {
-        map.set(question.section, [])
+      const key = question.section ?? 'Pytania'
+      if (!map.has(key)) {
+        map.set(key, [])
       }
-      map.get(question.section)!.push(question)
+      map.get(key)!.push(question)
     })
     return Array.from(map.entries())
   }, [])
