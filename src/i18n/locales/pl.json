@@ -15,7 +15,16 @@
   "nav": {
     "home": "Strona główna",
     "tests": "Testy",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "about": "O NAS",
+    "offer": "OFERTA",
+    "summerOffer": "Oferta wakacyjna",
+    "groupCourses": "Kursy grupowe",
+    "webinars": "Webinary",
+    "individualCourse": "Kurs indywidualny",
+    "signUp": "ZAPISZ SIĘ!",
+    "shop": "SKLEP",
+    "myAccount": "MOJE KONTO"
   },
   "hero": {
     "title": "TESTY",
@@ -78,3 +87,4 @@
     "checkYourLevel": "Sprawdź swój poziom znajomości języka niemieckiego"
   }
 }
+

@@ -1,4 +1,4 @@
-import { useMemo, useState, type FormEvent } from 'react'
+import React, { useMemo, useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import type { Question } from '../components/Test/types'
 import whatsappLogo from '../assets/whatsapp.png'
@@ -3282,53 +3282,101 @@ const GermanTestsPage = () => {
           {groupedQuestionsA1.map(([section, sectionQuestions]) => {
             const intro = sectionQuestions.find((q) => q.sectionIntro)?.sectionIntro
             return (
-            <fieldset key={section} className="question-section">
-              <legend>{section}</legend>
-              {intro && <div className="section-intro">{intro}</div>}
-              <div className="question-list">
-                {sectionQuestions.map((question) => (
-                  <div
-                    key={question.id}
-                    className={`question-card ${
-                      submittedA1 && answersA1[question.id] === question.correct
-                        ? 'correct'
-                        : submittedA1 && answersA1[question.id]
-                          ? 'incorrect'
-                          : ''
-                    }`}
-                  >
-                    <div className="question-text">
-                      <span className="question-number">{question.id}.</span>
-                      <p>{question.prompt}</p>
+            <React.Fragment key={section}>
+              {['Pytania 26-39', 'Pytania 40-47'].includes(section) ? (
+                <div className="question-list">
+                  {sectionQuestions.map((question) => (
+                    <div
+                      key={question.id}
+                      className={`question-card ${
+                        submittedA1 && answersA1[question.id] === question.correct
+                          ? 'correct'
+                          : submittedA1 && answersA1[question.id]
+                            ? 'incorrect'
+                            : ''
+                      }`}
+                    >
+                      <div className="question-text">
+                        <span className="question-number">{question.id}.</span>
+                        <p>{question.prompt}</p>
+                      </div>
+                      <div className="options-grid">
+                        {question.options.map((option) => {
+                          const inputId = `q-${question.id}-${option.value}`
+                          const checked = answersA1[question.id] === option.value
+                          return (
+                            <label
+                              key={option.value}
+                              className={`option ${checked ? 'checked' : ''} ${!canStartA1 ? 'disabled' : ''}`}
+                              htmlFor={inputId}
+                            >
+                              <input
+                                type="radio"
+                                id={inputId}
+                                name={`question-${question.id}`}
+                                value={option.value}
+                                checked={checked}
+                                disabled={!canStartA1}
+                                onChange={() => handleChangeA1(question.id, option.value)}
+                              />
+                              <span>{option.label}</span>
+                            </label>
+                          )
+                        })}
+                      </div>
                     </div>
-                    <div className="options-grid">
-                      {question.options.map((option) => {
-                        const inputId = `q-${question.id}-${option.value}`
-                        const checked = answersA1[question.id] === option.value
-                        return (
-                          <label
-                            key={option.value}
-                            className={`option ${checked ? 'checked' : ''} ${!canStartA1 ? 'disabled' : ''}`}
-                            htmlFor={inputId}
-                          >
-                            <input
-                              type="radio"
-                              id={inputId}
-                              name={`question-${question.id}`}
-                              value={option.value}
-                              checked={checked}
-                              disabled={!canStartA1}
-                              onChange={() => handleChangeA1(question.id, option.value)}
-                            />
-                            <span>{option.label}</span>
-                          </label>
-                        )
-                      })}
-                    </div>
+                  ))}
+                </div>
+              ) : (
+                <fieldset className="question-section">
+                  <legend>{section}</legend>
+                  {intro && <div className="section-intro">{intro}</div>}
+                  <div className="question-list">
+                    {sectionQuestions.map((question) => (
+                      <div
+                        key={question.id}
+                        className={`question-card ${
+                          submittedA1 && answersA1[question.id] === question.correct
+                            ? 'correct'
+                            : submittedA1 && answersA1[question.id]
+                              ? 'incorrect'
+                              : ''
+                        }`}
+                      >
+                        <div className="question-text">
+                          <span className="question-number">{question.id}.</span>
+                          <p>{question.prompt}</p>
+                        </div>
+                        <div className="options-grid">
+                          {question.options.map((option) => {
+                            const inputId = `q-${question.id}-${option.value}`
+                            const checked = answersA1[question.id] === option.value
+                            return (
+                              <label
+                                key={option.value}
+                                className={`option ${checked ? 'checked' : ''} ${!canStartA1 ? 'disabled' : ''}`}
+                                htmlFor={inputId}
+                              >
+                                <input
+                                  type="radio"
+                                  id={inputId}
+                                  name={`question-${question.id}`}
+                                  value={option.value}
+                                  checked={checked}
+                                  disabled={!canStartA1}
+                                  onChange={() => handleChangeA1(question.id, option.value)}
+                                />
+                                <span>{option.label}</span>
+                              </label>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </fieldset>
+                </fieldset>
+              )}
+            </React.Fragment>
           )})}
 
           <div className="form-actions">
@@ -3441,53 +3489,101 @@ const GermanTestsPage = () => {
           {groupedQuestionsA2.map(([section, sectionQuestions]) => {
             const intro = sectionQuestions.find((q) => q.sectionIntro)?.sectionIntro
             return (
-            <fieldset key={section} className="question-section">
-              <legend>{section}</legend>
-              {intro && <div className="section-intro">{intro}</div>}
-              <div className="question-list">
-                {sectionQuestions.map((question) => (
-                  <div
-                    key={question.id}
-                    className={`question-card ${
-                      submittedA2 && answersA2[question.id] === question.correct
-                        ? 'correct'
-                        : submittedA2 && answersA2[question.id]
-                          ? 'incorrect'
-                          : ''
-                    }`}
-                  >
-                    <div className="question-text">
-                      <span className="question-number">{question.id}.</span>
-                      <p>{question.prompt}</p>
+            <React.Fragment key={section}>
+              {['Pytania 64-75', 'Pytania 76-97'].includes(section) ? (
+                <div className="question-list">
+                  {sectionQuestions.map((question) => (
+                    <div
+                      key={question.id}
+                      className={`question-card ${
+                        submittedA2 && answersA2[question.id] === question.correct
+                          ? 'correct'
+                          : submittedA2 && answersA2[question.id]
+                            ? 'incorrect'
+                            : ''
+                      }`}
+                    >
+                      <div className="question-text">
+                        <span className="question-number">{question.id}.</span>
+                        <p>{question.prompt}</p>
+                      </div>
+                      <div className="options-grid">
+                        {question.options.map((option) => {
+                          const inputId = `q-a2-${question.id}-${option.value}`
+                          const checked = answersA2[question.id] === option.value
+                          return (
+                            <label
+                              key={option.value}
+                              className={`option ${checked ? 'checked' : ''} ${!canStartA2 ? 'disabled' : ''}`}
+                              htmlFor={inputId}
+                            >
+                              <input
+                                type="radio"
+                                id={inputId}
+                                name={`question-a2-${question.id}`}
+                                value={option.value}
+                                checked={checked}
+                                disabled={!canStartA2}
+                                onChange={() => handleChangeA2(question.id, option.value)}
+                              />
+                              <span>{option.label}</span>
+                            </label>
+                          )
+                        })}
+                      </div>
                     </div>
-                    <div className="options-grid">
-                      {question.options.map((option) => {
-                        const inputId = `q-a2-${question.id}-${option.value}`
-                        const checked = answersA2[question.id] === option.value
-                        return (
-                          <label
-                            key={option.value}
-                            className={`option ${checked ? 'checked' : ''} ${!canStartA2 ? 'disabled' : ''}`}
-                            htmlFor={inputId}
-                          >
-                            <input
-                              type="radio"
-                              id={inputId}
-                              name={`question-a2-${question.id}`}
-                              value={option.value}
-                              checked={checked}
-                              disabled={!canStartA2}
-                              onChange={() => handleChangeA2(question.id, option.value)}
-                            />
-                            <span>{option.label}</span>
-                          </label>
-                        )
-                      })}
-                    </div>
+                  ))}
+                </div>
+              ) : (
+                <fieldset className="question-section">
+                  <legend>{section}</legend>
+                  {intro && <div className="section-intro">{intro}</div>}
+                  <div className="question-list">
+                    {sectionQuestions.map((question) => (
+                      <div
+                        key={question.id}
+                        className={`question-card ${
+                          submittedA2 && answersA2[question.id] === question.correct
+                            ? 'correct'
+                            : submittedA2 && answersA2[question.id]
+                              ? 'incorrect'
+                              : ''
+                        }`}
+                      >
+                        <div className="question-text">
+                          <span className="question-number">{question.id}.</span>
+                          <p>{question.prompt}</p>
+                        </div>
+                        <div className="options-grid">
+                          {question.options.map((option) => {
+                            const inputId = `q-a2-${question.id}-${option.value}`
+                            const checked = answersA2[question.id] === option.value
+                            return (
+                              <label
+                                key={option.value}
+                                className={`option ${checked ? 'checked' : ''} ${!canStartA2 ? 'disabled' : ''}`}
+                                htmlFor={inputId}
+                              >
+                                <input
+                                  type="radio"
+                                  id={inputId}
+                                  name={`question-a2-${question.id}`}
+                                  value={option.value}
+                                  checked={checked}
+                                  disabled={!canStartA2}
+                                  onChange={() => handleChangeA2(question.id, option.value)}
+                                />
+                                <span>{option.label}</span>
+                              </label>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </fieldset>
+                </fieldset>
+              )}
+            </React.Fragment>
           )})}
 
           <div className="form-actions">
@@ -3597,59 +3693,109 @@ const GermanTestsPage = () => {
             {emailErrorB1 ? <p className="email-error">{emailErrorB1}</p> : null}
           </div>
 
-          <div className="reading-text">
-            <h3>Tekst do pytań 148-150</h3>
-            <p><strong>Leben in der Stadt oder auf dem Dorf?</strong></p>
-            <p><strong>Jonas:</strong> Ich bin in einer kleinen Stadt aufgewachsen und habe dort lange gewohnt. Als ich mein Studium begonnen habe, bin ich nach Berlin gezogen. Dort gibt es viele Möglichkeiten, aber auch viel Stress. Heute lebe ich wieder außerhalb der Stadt. Die Natur ist näher, aber ohne Auto geht hier fast nichts. Später, wenn ich älter bin, könnte ich mir vorstellen, wieder zentral zu wohnen.</p>
-          </div>
 
           {groupedQuestionsB1.map(([section, sectionQuestions]) => (
-            <fieldset key={section} className="question-section">
-              <legend>{section}</legend>
-              <div className="question-list">
-                {sectionQuestions.map((question) => (
-                  <div
-                    key={question.id}
-                    className={`question-card ${
-                      submittedB1 && answersB1[question.id] === question.correct
-                        ? 'correct'
-                        : submittedB1 && answersB1[question.id]
-                          ? 'incorrect'
-                          : ''
-                    }`}
-                  >
-                    <div className="question-text">
-                      <span className="question-number">{question.id}.</span>
-                      <p>{question.prompt}</p>
+            <React.Fragment key={section}>
+              {section === 'Pytania 148-150' && (
+                <div className="reading-text">
+                  <h3>Tekst do pytań 148-150</h3>
+                  <p><strong>Leben in der Stadt oder auf dem Dorf?</strong></p>
+                  <p><strong>Jonas:</strong> Ich bin in einer kleinen Stadt aufgewachsen und habe dort lange gewohnt. Als ich mein Studium begonnen habe, bin ich nach Berlin gezogen. Dort gibt es viele Möglichkeiten, aber auch viel Stress. Heute lebe ich wieder außerhalb der Stadt. Die Natur ist näher, aber ohne Auto geht hier fast nichts. Später, wenn ich älter bin, könnte ich mir vorstellen, wieder zentral zu wohnen.</p>
+                </div>
+              )}
+              {['Pytania 101-113', 'Pytania 114-125', 'Pytania 126-147'].includes(section) ? (
+                <div className="question-list">
+                  {sectionQuestions.map((question) => (
+                    <div
+                      key={question.id}
+                      className={`question-card ${
+                        submittedB1 && answersB1[question.id] === question.correct
+                          ? 'correct'
+                          : submittedB1 && answersB1[question.id]
+                            ? 'incorrect'
+                            : ''
+                      }`}
+                    >
+                      <div className="question-text">
+                        <span className="question-number">{question.id}.</span>
+                        <p>{question.prompt}</p>
+                      </div>
+                      <div className="options-grid">
+                        {question.options.map((option) => {
+                          const inputId = `q-b1-${question.id}-${option.value}`
+                          const checked = answersB1[question.id] === option.value
+                          return (
+                            <label
+                              key={option.value}
+                              className={`option ${checked ? 'checked' : ''} ${!canStartB1 ? 'disabled' : ''}`}
+                              htmlFor={inputId}
+                            >
+                              <input
+                                type="radio"
+                                id={inputId}
+                                name={`question-b1-${question.id}`}
+                                value={option.value}
+                                checked={checked}
+                                disabled={!canStartB1}
+                                onChange={() => handleChangeB1(question.id, option.value)}
+                              />
+                              <span>{option.label}</span>
+                            </label>
+                          )
+                        })}
+                      </div>
                     </div>
-                    <div className="options-grid">
-                      {question.options.map((option) => {
-                        const inputId = `q-b1-${question.id}-${option.value}`
-                        const checked = answersB1[question.id] === option.value
-                        return (
-                          <label
-                            key={option.value}
-                            className={`option ${checked ? 'checked' : ''} ${!canStartB1 ? 'disabled' : ''}`}
-                            htmlFor={inputId}
-                          >
-                            <input
-                              type="radio"
-                              id={inputId}
-                              name={`question-b1-${question.id}`}
-                              value={option.value}
-                              checked={checked}
-                              disabled={!canStartB1}
-                              onChange={() => handleChangeB1(question.id, option.value)}
-                            />
-                            <span>{option.label}</span>
-                          </label>
-                        )
-                      })}
-                    </div>
+                  ))}
+                </div>
+              ) : (
+                <fieldset className="question-section">
+                  <legend>{section}</legend>
+                  <div className="question-list">
+                    {sectionQuestions.map((question) => (
+                      <div
+                        key={question.id}
+                        className={`question-card ${
+                          submittedB1 && answersB1[question.id] === question.correct
+                            ? 'correct'
+                            : submittedB1 && answersB1[question.id]
+                              ? 'incorrect'
+                              : ''
+                        }`}
+                      >
+                        <div className="question-text">
+                          <span className="question-number">{question.id}.</span>
+                          <p>{question.prompt}</p>
+                        </div>
+                        <div className="options-grid">
+                          {question.options.map((option) => {
+                            const inputId = `q-b1-${question.id}-${option.value}`
+                            const checked = answersB1[question.id] === option.value
+                            return (
+                              <label
+                                key={option.value}
+                                className={`option ${checked ? 'checked' : ''} ${!canStartB1 ? 'disabled' : ''}`}
+                                htmlFor={inputId}
+                              >
+                                <input
+                                  type="radio"
+                                  id={inputId}
+                                  name={`question-b1-${question.id}`}
+                                  value={option.value}
+                                  checked={checked}
+                                  disabled={!canStartB1}
+                                  onChange={() => handleChangeB1(question.id, option.value)}
+                                />
+                                <span>{option.label}</span>
+                              </label>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </fieldset>
+                </fieldset>
+              )}
+            </React.Fragment>
           ))}
 
           <div className="form-actions">
@@ -3760,52 +3906,100 @@ const GermanTestsPage = () => {
           </div>
 
           {groupedQuestionsB2.map(([section, sectionQuestions]) => (
-            <fieldset key={section} className="question-section">
-              <legend>{section}</legend>
-              <div className="question-list">
-                {sectionQuestions.map((question) => (
-                  <div
-                    key={question.id}
-                    className={`question-card ${
-                      submittedB2 && answersB2[question.id] === question.correct
-                        ? 'correct'
-                        : submittedB2 && answersB2[question.id]
-                          ? 'incorrect'
-                          : ''
-                    }`}
-                  >
-                    <div className="question-text">
-                      <span className="question-number">{question.id}.</span>
-                      <p>{question.prompt}</p>
+            <React.Fragment key={section}>
+              {['Pytania 164-175', 'Pytania 176-200'].includes(section) ? (
+                <div className="question-list">
+                  {sectionQuestions.map((question) => (
+                    <div
+                      key={question.id}
+                      className={`question-card ${
+                        submittedB2 && answersB2[question.id] === question.correct
+                          ? 'correct'
+                          : submittedB2 && answersB2[question.id]
+                            ? 'incorrect'
+                            : ''
+                      }`}
+                    >
+                      <div className="question-text">
+                        <span className="question-number">{question.id}.</span>
+                        <p>{question.prompt}</p>
+                      </div>
+                      <div className="options-grid">
+                        {question.options.map((option) => {
+                          const inputId = `q-b2-${question.id}-${option.value}`
+                          const checked = answersB2[question.id] === option.value
+                          return (
+                            <label
+                              key={option.value}
+                              className={`option ${checked ? 'checked' : ''} ${!canStartB2 ? 'disabled' : ''}`}
+                              htmlFor={inputId}
+                            >
+                              <input
+                                type="radio"
+                                id={inputId}
+                                name={`question-b2-${question.id}`}
+                                value={option.value}
+                                checked={checked}
+                                disabled={!canStartB2}
+                                onChange={() => handleChangeB2(question.id, option.value)}
+                              />
+                              <span>{option.label}</span>
+                            </label>
+                          )
+                        })}
+                      </div>
                     </div>
-                    <div className="options-grid">
-                      {question.options.map((option) => {
-                        const inputId = `q-b2-${question.id}-${option.value}`
-                        const checked = answersB2[question.id] === option.value
-                        return (
-                          <label
-                            key={option.value}
-                            className={`option ${checked ? 'checked' : ''} ${!canStartB2 ? 'disabled' : ''}`}
-                            htmlFor={inputId}
-                          >
-                            <input
-                              type="radio"
-                              id={inputId}
-                              name={`question-b2-${question.id}`}
-                              value={option.value}
-                              checked={checked}
-                              disabled={!canStartB2}
-                              onChange={() => handleChangeB2(question.id, option.value)}
-                            />
-                            <span>{option.label}</span>
-                          </label>
-                        )
-                      })}
-                    </div>
+                  ))}
+                </div>
+              ) : (
+                <fieldset className="question-section">
+                  <legend>{section}</legend>
+                  <div className="question-list">
+                    {sectionQuestions.map((question) => (
+                      <div
+                        key={question.id}
+                        className={`question-card ${
+                          submittedB2 && answersB2[question.id] === question.correct
+                            ? 'correct'
+                            : submittedB2 && answersB2[question.id]
+                              ? 'incorrect'
+                              : ''
+                        }`}
+                      >
+                        <div className="question-text">
+                          <span className="question-number">{question.id}.</span>
+                          <p>{question.prompt}</p>
+                        </div>
+                        <div className="options-grid">
+                          {question.options.map((option) => {
+                            const inputId = `q-b2-${question.id}-${option.value}`
+                            const checked = answersB2[question.id] === option.value
+                            return (
+                              <label
+                                key={option.value}
+                                className={`option ${checked ? 'checked' : ''} ${!canStartB2 ? 'disabled' : ''}`}
+                                htmlFor={inputId}
+                              >
+                                <input
+                                  type="radio"
+                                  id={inputId}
+                                  name={`question-b2-${question.id}`}
+                                  value={option.value}
+                                  checked={checked}
+                                  disabled={!canStartB2}
+                                  onChange={() => handleChangeB2(question.id, option.value)}
+                                />
+                                <span>{option.label}</span>
+                              </label>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </fieldset>
+                </fieldset>
+              )}
+            </React.Fragment>
           ))}
 
           <div className="form-actions">
