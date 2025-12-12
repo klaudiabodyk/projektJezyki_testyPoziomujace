@@ -3,6 +3,10 @@
   publish = "dist"
   functions = "netlify/functions"
 
+# Environment variables
+[build.environment]
+  VITE_META_PIXEL_ID = "675847502083478"
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"

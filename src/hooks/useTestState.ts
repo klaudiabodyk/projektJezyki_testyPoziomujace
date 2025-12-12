@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react'
 import type { Question } from '../components/Test/types'
 import { validateEmail } from '../utils/validation'
 import { sendResultsEmail } from '../utils/sendResults'
+import { trackTestCompletion } from '../utils/metaPixel'
 
 type ShareConfig = {
   buildMessage: (score: number, total: number, percent: number | null, level: string) => string
@@ -80,6 +81,9 @@ export const useTestState = ({ questions, resolveLevel, languageLabel, shareConf
     try {
       await sendResultsEmail(correct, missing, email, questions.length, level ?? 'N/A', languageLabel)
       setEmailSent(true)
+      // Track test completion
+      const finalPercent = Math.round((correct / questions.length) * 100)
+      trackTestCompletion(level ?? 'N/A', finalPercent, languageLabel)
     } catch (error) {
       setEmailSendError(
         error instanceof Error ? error.message : 'Nie udało się wysłać e-maila. Spróbuj ponownie później.',
