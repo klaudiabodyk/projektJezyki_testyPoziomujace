@@ -1449,7 +1449,7 @@ const questionsB1: Question[] = [
     options: [
       { value: 'a', label: 'a) Hätte' },
       { value: 'b', label: 'b) Wäre' },
-      { value: 'c', label: 'c) Wäre' },
+      { value: 'c', label: 'c) Hatte' },
       { value: 'd', label: 'd) Ist' },
     ],
     correct: 'a',
@@ -1593,7 +1593,7 @@ const questionsB1: Question[] = [
     options: [
       { value: 'a', label: 'a) brauche... zu kümmern' },
       { value: 'b', label: 'b) brauche... kümmern' },
-      { value: 'c', label: 'c) muss... zu kümmern' },
+      { value: 'c', label: 'c) muss ... gekümmert' },
       { value: 'd', label: 'd) muss... kümmern' },
     ],
     correct: 'a',
