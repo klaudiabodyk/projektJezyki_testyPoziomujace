@@ -3,6 +3,9 @@
   publish = "dist"
   functions = "netlify/functions"
 
+# Environment variables should be set in Netlify dashboard
+# VITE_META_PIXEL_ID should be configured as an environment variable in Netlify
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"

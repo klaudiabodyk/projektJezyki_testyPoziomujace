@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import type { Question } from '../components/Test/types'
 import whatsappLogo from '../assets/whatsapp.png'
 import SectionWrapper from '../components/SectionWrapper/SectionWrapper'
+import { trackTestCompletion } from '../utils/metaPixel'
 import './GermanTestsPage.css'
 
 const questionsA1: Question[] = [
@@ -2901,6 +2902,9 @@ const GermanTestsPage = () => {
     try {
       await sendResultsEmail(correct, missing, emailA1, questionsA1.length, 'A1')
       setEmailSentA1(true)
+      // Track test completion
+      const percent = Math.round((correct / questionsA1.length) * 100)
+      trackTestCompletion('A1', percent, 'Niemiecki')
     } catch (error) {
       setEmailSendErrorA1(
         error instanceof Error
@@ -2948,6 +2952,9 @@ const GermanTestsPage = () => {
     try {
       await sendResultsEmail(correct, missing, emailA2, questionsA2.length, 'A2')
       setEmailSentA2(true)
+      // Track test completion
+      const percent = Math.round((correct / questionsA2.length) * 100)
+      trackTestCompletion('A2', percent, 'Niemiecki')
     } catch (error) {
       setEmailSendErrorA2(
         error instanceof Error
@@ -2995,6 +3002,9 @@ const GermanTestsPage = () => {
     try {
       await sendResultsEmail(correct, missing, emailB1, questionsB1.length, 'B1')
       setEmailSentB1(true)
+      // Track test completion
+      const percent = Math.round((correct / questionsB1.length) * 100)
+      trackTestCompletion('B1', percent, 'Niemiecki')
     } catch (error) {
       setEmailSendErrorB1(
         error instanceof Error
@@ -3042,6 +3052,9 @@ const GermanTestsPage = () => {
     try {
       await sendResultsEmail(correct, missing, emailB2, questionsB2.length, 'B2')
       setEmailSentB2(true)
+      // Track test completion
+      const percent = Math.round((correct / questionsB2.length) * 100)
+      trackTestCompletion('B2', percent, 'Niemiecki')
     } catch (error) {
       setEmailSendErrorB2(
         error instanceof Error
@@ -3089,6 +3102,9 @@ const GermanTestsPage = () => {
     try {
       await sendResultsEmail(correct, missing, emailC1, questionsC1.length, 'C1')
       setEmailSentC1(true)
+      // Track test completion
+      const percent = Math.round((correct / questionsC1.length) * 100)
+      trackTestCompletion('C1', percent, 'Niemiecki')
     } catch (error) {
       setEmailSendErrorC1(
         error instanceof Error
