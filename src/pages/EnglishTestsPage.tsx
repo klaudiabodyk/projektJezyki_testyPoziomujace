@@ -1026,10 +1026,11 @@ const questionsAdvanced: Question[] = [
 const emailHelperText =
   'Adres e-mail jest wymagany przed zaznaczeniem odpowiedzi. Wynik zostanie wysłany na kontakt@joannaadamek.edu.pl.'
 
-const buildEnglishShareMessage = (score: number, total: number, percent: number | null, level: string) =>
-  `Ukończyłem/am test poziomujący z języka angielskiego!\n\nWynik: ${score}/${total}${
-    percent !== null ? ` (${percent}%)` : ''
-  }\nPoziom: ${level}\n\nSprawdź swój poziom: ${window.location.origin}/angielski`
+const buildEnglishShareMessage =
+  (testLabel: string) => (score: number, total: number, percent: number | null, level: string) =>
+    `Wynik testu poziomującego - język angielski\nArkusz: ${testLabel}\nRekomendowany poziom: ${level}\nWynik: ${score}/${total}${
+      percent !== null ? ` (${percent}%)` : ''
+    }\nLink do testu: ${window.location.origin}/angielski`
 
 const EnglishTestsPage = () => {
   const [selectedLevel, setSelectedLevel] = useState<'basic' | 'advanced' | null>(null)
@@ -1043,7 +1044,7 @@ const EnglishTestsPage = () => {
     },
     languageLabel: 'angielski',
     shareConfig: {
-      buildMessage: buildEnglishShareMessage,
+      buildMessage: buildEnglishShareMessage('A0-A2.1 (podstawowy)'),
       baseUrl: 'https://wa.me/?text=',
       fallbackUrl: '#',
     },
@@ -1059,7 +1060,7 @@ const EnglishTestsPage = () => {
     },
     languageLabel: 'angielski',
     shareConfig: {
-      buildMessage: buildEnglishShareMessage,
+      buildMessage: buildEnglishShareMessage('A2.2-C1 (zaawansowany)'),
       baseUrl: 'https://wa.me/?text=',
       fallbackUrl: '#',
     },

@@ -3123,16 +3123,32 @@ const GermanTestsPage = () => {
     setSubmittedC1(false)
   }
 
-  const percentA1 =
-    scoreA1 === null ? null : Math.round(((scoreA1 ?? 0) / questionsA1.length) * 100)
-  const whatsappMessageA1 =
-    submittedA1 && scoreA1 !== null
+  const buildWhatsappShareText = (
+    languageLabel: string,
+    testLabel: string,
+    score: number | null,
+    total: number,
+    percentValue: number | null,
+    isSubmitted: boolean,
+  ) =>
+    isSubmitted && score !== null
       ? encodeURIComponent(
-          `Mój wynik testu poziomującego A1 (niemiecki) to : ${scoreA1}/${questionsA1.length}${
-            percentA1 !== null ? ` (${percentA1}%)` : ''
-          }. Pomóż mi dobrać grupę!`,
+          `Wynik testu poziomującego (${languageLabel})\nArkusz: ${testLabel}\nWynik: ${score}/${total}${
+            percentValue !== null ? ` (${percentValue}%)` : ''
+          }\nPomóż mi dobrać grupę!`,
         )
       : ''
+
+  const percentA1 =
+    scoreA1 === null ? null : Math.round(((scoreA1 ?? 0) / questionsA1.length) * 100)
+  const whatsappMessageA1 = buildWhatsappShareText(
+    'niemiecki',
+    'A1',
+    scoreA1,
+    questionsA1.length,
+    percentA1,
+    submittedA1,
+  )
   const whatsappShareUrlA1 = whatsappMessageA1
     ? `https://wa.me/48512253179?text=${whatsappMessageA1}`
     : 'https://wa.me/48512253179'
@@ -3141,14 +3157,14 @@ const GermanTestsPage = () => {
 
   const percentA2 =
     scoreA2 === null ? null : Math.round(((scoreA2 ?? 0) / questionsA2.length) * 100)
-  const whatsappMessageA2 =
-    submittedA2 && scoreA2 !== null
-      ? encodeURIComponent(
-          `Mój wynik testu poziomującego A2 (niemiecki) to : ${scoreA2}/${questionsA2.length}${
-            percentA2 !== null ? ` (${percentA2}%)` : ''
-          }. Pomóż mi dobrać grupę!`,
-        )
-      : ''
+  const whatsappMessageA2 = buildWhatsappShareText(
+    'niemiecki',
+    'A2',
+    scoreA2,
+    questionsA2.length,
+    percentA2,
+    submittedA2,
+  )
   const whatsappShareUrlA2 = whatsappMessageA2
     ? `https://wa.me/48512253179?text=${whatsappMessageA2}`
     : 'https://wa.me/48512253179'
@@ -3157,14 +3173,14 @@ const GermanTestsPage = () => {
 
   const percentB1 =
     scoreB1 === null ? null : Math.round(((scoreB1 ?? 0) / questionsB1.length) * 100)
-  const whatsappMessageB1 =
-    submittedB1 && scoreB1 !== null
-      ? encodeURIComponent(
-          `Mój wynik testu poziomującego B1 (niemiecki) to : ${scoreB1}/${questionsB1.length}${
-            percentB1 !== null ? ` (${percentB1}%)` : ''
-          }. Pomóż mi dobrać grupę!`,
-        )
-      : ''
+  const whatsappMessageB1 = buildWhatsappShareText(
+    'niemiecki',
+    'B1',
+    scoreB1,
+    questionsB1.length,
+    percentB1,
+    submittedB1,
+  )
   const whatsappShareUrlB1 = whatsappMessageB1
     ? `https://wa.me/48512253179?text=${whatsappMessageB1}`
     : 'https://wa.me/48512253179'
@@ -3173,14 +3189,14 @@ const GermanTestsPage = () => {
 
   const percentB2 =
     scoreB2 === null ? null : Math.round(((scoreB2 ?? 0) / questionsB2.length) * 100)
-  const whatsappMessageB2 =
-    submittedB2 && scoreB2 !== null
-      ? encodeURIComponent(
-          `Mój wynik testu poziomującego B2 (niemiecki) to : ${scoreB2}/${questionsB2.length}${
-            percentB2 !== null ? ` (${percentB2}%)` : ''
-          }. Pomóż mi dobrać grupę!`,
-        )
-      : ''
+  const whatsappMessageB2 = buildWhatsappShareText(
+    'niemiecki',
+    'B2',
+    scoreB2,
+    questionsB2.length,
+    percentB2,
+    submittedB2,
+  )
   const whatsappShareUrlB2 = whatsappMessageB2
     ? `https://wa.me/48512253179?text=${whatsappMessageB2}`
     : 'https://wa.me/48512253179'
@@ -3189,14 +3205,14 @@ const GermanTestsPage = () => {
 
   const percentC1 =
     scoreC1 === null ? null : Math.round(((scoreC1 ?? 0) / questionsC1.length) * 100)
-  const whatsappMessageC1 =
-    submittedC1 && scoreC1 !== null
-      ? encodeURIComponent(
-          `Mój wynik testu poziomującego C1 (niemiecki) to : ${scoreC1}/${questionsC1.length}${
-            percentC1 !== null ? ` (${percentC1}%)` : ''
-          }. Pomóż mi dobrać grupę!`,
-        )
-      : ''
+  const whatsappMessageC1 = buildWhatsappShareText(
+    'niemiecki',
+    'C1',
+    scoreC1,
+    questionsC1.length,
+    percentC1,
+    submittedC1,
+  )
   const whatsappShareUrlC1 = whatsappMessageC1
     ? `https://wa.me/48512253179?text=${whatsappMessageC1}`
     : 'https://wa.me/48512253179'

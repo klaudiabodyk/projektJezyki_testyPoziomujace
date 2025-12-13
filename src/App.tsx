@@ -28,8 +28,8 @@ function AppContent() {
             element={
               <>
                 <HeroSection />
-                <LanguagesSection />
                 <HelpSection />
+                <LanguagesSection />
                 <ContactSection />
               </>
             }
