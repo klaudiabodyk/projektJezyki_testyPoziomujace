@@ -86,16 +86,18 @@ export const useTestState = ({
     setSubmitted(true)
     setEmailSent(false)
     setEmailSendError(null)
-    setEmailSending(true)
     
-    // Calculate level immediately for email
+    // Calculate level immediately
     const calculatedLevel = resolveLevel(correct)
     const finalPercent = Math.round((correct / questions.length) * 100)
     
-    // Prepare WhatsApp URL before try block
+    // Prepare and open WhatsApp FIRST
     const message = shareConfig.buildMessage(correct, questions.length, finalPercent, calculatedLevel, missing, email)
     const whatsappUrl = `${shareConfig.baseUrl}${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
     
+    // Then send email in the background
+    setEmailSending(true)
     try {
       await sendResultsEmail(
         correct,
@@ -116,8 +118,6 @@ export const useTestState = ({
       )
     } finally {
       setEmailSending(false)
-      // Open WhatsApp regardless of email result
-      window.open(whatsappUrl, '_blank')
     }
   }
 

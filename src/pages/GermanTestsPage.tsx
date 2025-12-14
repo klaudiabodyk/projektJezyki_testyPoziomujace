@@ -2900,13 +2900,15 @@ const GermanTestsPage = () => {
     setSubmittedA1(true)
     setEmailSentA1(false)
     setEmailSendErrorA1(null)
-    setEmailSendingA1(true)
     
-    // Prepare WhatsApp URL before try block
+    // Prepare and open WhatsApp FIRST
     const percent = Math.round((correct / questionsA1.length) * 100)
     const message = buildWhatsappShareText('niemiecki', 'A1', correct, questionsA1.length, percent, true, missing, emailA1)
-    const whatsappUrl = `https://wa.me/48512253179&text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/48512253179?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
     
+    // Then send email in the background
+    setEmailSendingA1(true)
     try {
       await sendResultsEmail(correct, missing, emailA1, questionsA1.length, 'A1', 'niemiecki', 'A1', `${window.location.origin}/niemiecki`)
       setEmailSentA1(true)
@@ -2920,8 +2922,6 @@ const GermanTestsPage = () => {
       )
     } finally {
       setEmailSendingA1(false)
-      // Open WhatsApp regardless of email result
-      window.open(whatsappUrl, '_blank')
     }
   }
 
@@ -2957,13 +2957,15 @@ const GermanTestsPage = () => {
     setSubmittedA2(true)
     setEmailSentA2(false)
     setEmailSendErrorA2(null)
-    setEmailSendingA2(true)
     
-    // Prepare WhatsApp URL before try block
+    // Prepare and open WhatsApp FIRST
     const percent = Math.round((correct / questionsA2.length) * 100)
     const message = buildWhatsappShareText('niemiecki', 'A2', correct, questionsA2.length, percent, true, missing, emailA2)
-    const whatsappUrl = `https://wa.me/48512253179&text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/48512253179?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
     
+    // Then send email in the background
+    setEmailSendingA2(true)
     try {
       await sendResultsEmail(correct, missing, emailA2, questionsA2.length, 'A2', 'niemiecki', 'A2', `${window.location.origin}/niemiecki`)
       setEmailSentA2(true)
@@ -2977,8 +2979,6 @@ const GermanTestsPage = () => {
       )
     } finally {
       setEmailSendingA2(false)
-      // Open WhatsApp regardless of email result
-      window.open(whatsappUrl, '_blank')
     }
   }
 
@@ -3014,13 +3014,15 @@ const GermanTestsPage = () => {
     setSubmittedB1(true)
     setEmailSentB1(false)
     setEmailSendErrorB1(null)
-    setEmailSendingB1(true)
     
-    // Prepare WhatsApp URL before try block
+    // Prepare and open WhatsApp FIRST
     const percent = Math.round((correct / questionsB1.length) * 100)
     const message = buildWhatsappShareText('niemiecki', 'B1', correct, questionsB1.length, percent, true, missing, emailB1)
-    const whatsappUrl = `https://wa.me/48512253179&text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/48512253179?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
     
+    // Then send email in the background
+    setEmailSendingB1(true)
     try {
       await sendResultsEmail(correct, missing, emailB1, questionsB1.length, 'B1', 'niemiecki', 'B1', `${window.location.origin}/niemiecki`)
       setEmailSentB1(true)
@@ -3034,8 +3036,6 @@ const GermanTestsPage = () => {
       )
     } finally {
       setEmailSendingB1(false)
-      // Open WhatsApp regardless of email result
-      window.open(whatsappUrl, '_blank')
     }
   }
 
@@ -3071,13 +3071,15 @@ const GermanTestsPage = () => {
     setSubmittedB2(true)
     setEmailSentB2(false)
     setEmailSendErrorB2(null)
-    setEmailSendingB2(true)
     
-    // Prepare WhatsApp URL before try block
+    // Prepare and open WhatsApp FIRST
     const percent = Math.round((correct / questionsB2.length) * 100)
     const message = buildWhatsappShareText('niemiecki', 'B2', correct, questionsB2.length, percent, true, missing, emailB2)
-    const whatsappUrl = `https://wa.me/48512253179&text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/48512253179?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
     
+    // Then send email in the background
+    setEmailSendingB2(true)
     try {
       await sendResultsEmail(correct, missing, emailB2, questionsB2.length, 'B2', 'niemiecki', 'B2', `${window.location.origin}/niemiecki`)
       setEmailSentB2(true)
@@ -3091,8 +3093,6 @@ const GermanTestsPage = () => {
       )
     } finally {
       setEmailSendingB2(false)
-      // Open WhatsApp regardless of email result
-      window.open(whatsappUrl, '_blank')
     }
   }
 
@@ -3128,13 +3128,15 @@ const GermanTestsPage = () => {
     setSubmittedC1(true)
     setEmailSentC1(false)
     setEmailSendErrorC1(null)
-    setEmailSendingC1(true)
     
-    // Prepare WhatsApp URL before try block
+    // Prepare and open WhatsApp FIRST
     const percent = Math.round((correct / questionsC1.length) * 100)
     const message = buildWhatsappShareText('niemiecki', 'C1', correct, questionsC1.length, percent, true, missing, emailC1)
-    const whatsappUrl = `https://wa.me/48512253179&text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/48512253179?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
     
+    // Then send email in the background
+    setEmailSendingC1(true)
     try {
       await sendResultsEmail(correct, missing, emailC1, questionsC1.length, 'C1', 'niemiecki', 'C1', `${window.location.origin}/niemiecki`)
       setEmailSentC1(true)
@@ -3148,8 +3150,6 @@ const GermanTestsPage = () => {
       )
     } finally {
       setEmailSendingC1(false)
-      // Open WhatsApp regardless of email result
-      window.open(whatsappUrl, '_blank')
     }
   }
 
