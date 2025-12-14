@@ -1027,10 +1027,10 @@ const emailHelperText =
   'Adres e-mail jest wymagany przed zaznaczeniem odpowiedzi. Wynik zostanie wysłany na kontakt@joannaadamek.edu.pl.'
 
 const buildEnglishShareMessage =
-  (testLabel: string) => (score: number, total: number, percent: number | null, level: string) =>
+  (testLabel: string) => (score: number, total: number, percent: number | null, level: string, missing: number, userEmail: string) =>
     `Wynik testu poziomującego - język angielski\nArkusz: ${testLabel}\nRekomendowany poziom: ${level}\nWynik: ${score}/${total}${
       percent !== null ? ` (${percent}%)` : ''
-    }\nLink do testu: ${window.location.origin}/angielski`
+    }\nNieodpowiedziane: ${missing}\nEmail uczestnika: ${userEmail}\nLink do testu: ${window.location.origin}/angielski`
 
 const EnglishTestsPage = () => {
   const [selectedLevel, setSelectedLevel] = useState<'basic' | 'advanced' | null>(null)
