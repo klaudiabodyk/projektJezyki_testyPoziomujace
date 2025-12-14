@@ -2905,7 +2905,7 @@ const GermanTestsPage = () => {
     // Prepare WhatsApp URL before try block
     const percent = Math.round((correct / questionsA1.length) * 100)
     const message = buildWhatsappShareText('niemiecki', 'A1', correct, questionsA1.length, percent, true, missing, emailA1)
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/48512253179&text=${encodeURIComponent(message)}`
     
     try {
       await sendResultsEmail(correct, missing, emailA1, questionsA1.length, 'A1', 'niemiecki', 'A1', `${window.location.origin}/niemiecki`)
@@ -2962,7 +2962,7 @@ const GermanTestsPage = () => {
     // Prepare WhatsApp URL before try block
     const percent = Math.round((correct / questionsA2.length) * 100)
     const message = buildWhatsappShareText('niemiecki', 'A2', correct, questionsA2.length, percent, true, missing, emailA2)
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/48512253179&text=${encodeURIComponent(message)}`
     
     try {
       await sendResultsEmail(correct, missing, emailA2, questionsA2.length, 'A2', 'niemiecki', 'A2', `${window.location.origin}/niemiecki`)
@@ -3019,7 +3019,7 @@ const GermanTestsPage = () => {
     // Prepare WhatsApp URL before try block
     const percent = Math.round((correct / questionsB1.length) * 100)
     const message = buildWhatsappShareText('niemiecki', 'B1', correct, questionsB1.length, percent, true, missing, emailB1)
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/48512253179&text=${encodeURIComponent(message)}`
     
     try {
       await sendResultsEmail(correct, missing, emailB1, questionsB1.length, 'B1', 'niemiecki', 'B1', `${window.location.origin}/niemiecki`)
@@ -3076,7 +3076,7 @@ const GermanTestsPage = () => {
     // Prepare WhatsApp URL before try block
     const percent = Math.round((correct / questionsB2.length) * 100)
     const message = buildWhatsappShareText('niemiecki', 'B2', correct, questionsB2.length, percent, true, missing, emailB2)
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/48512253179&text=${encodeURIComponent(message)}`
     
     try {
       await sendResultsEmail(correct, missing, emailB2, questionsB2.length, 'B2', 'niemiecki', 'B2', `${window.location.origin}/niemiecki`)
@@ -3133,7 +3133,7 @@ const GermanTestsPage = () => {
     // Prepare WhatsApp URL before try block
     const percent = Math.round((correct / questionsC1.length) * 100)
     const message = buildWhatsappShareText('niemiecki', 'C1', correct, questionsC1.length, percent, true, missing, emailC1)
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/48512253179&text=${encodeURIComponent(message)}`
     
     try {
       await sendResultsEmail(correct, missing, emailC1, questionsC1.length, 'C1', 'niemiecki', 'C1', `${window.location.origin}/niemiecki`)
@@ -3189,8 +3189,8 @@ const GermanTestsPage = () => {
     emailA1,
   )
   const whatsappShareUrlA1 = whatsappMessageA1
-    ? `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(whatsappMessageA1)}`
-    : 'https://api.whatsapp.com/send?phone=48512253179'
+    ? `https://wa.me/48512253179&text=${encodeURIComponent(whatsappMessageA1)}`
+    : 'https://wa.me/48512253179'
   const emailIsValidA1 = validateEmail(emailA1)
   const canStartA1 = emailIsValidA1
 
@@ -3207,8 +3207,8 @@ const GermanTestsPage = () => {
     emailA2,
   )
   const whatsappShareUrlA2 = whatsappMessageA2
-    ? `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(whatsappMessageA2)}`
-    : 'https://api.whatsapp.com/send?phone=48512253179'
+    ? `https://wa.me/48512253179&text=${encodeURIComponent(whatsappMessageA2)}`
+    : 'https://wa.me/48512253179'
   const emailIsValidA2 = validateEmail(emailA2)
   const canStartA2 = emailIsValidA2
 
@@ -3225,8 +3225,8 @@ const GermanTestsPage = () => {
     emailB1,
   )
   const whatsappShareUrlB1 = whatsappMessageB1
-    ? `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(whatsappMessageB1)}`
-    : 'https://api.whatsapp.com/send?phone=48512253179'
+    ? `https://wa.me/48512253179&text=${encodeURIComponent(whatsappMessageB1)}`
+    : 'https://wa.me/48512253179'
   const emailIsValidB1 = validateEmail(emailB1)
   const canStartB1 = emailIsValidB1
 
@@ -3243,8 +3243,8 @@ const GermanTestsPage = () => {
     emailB2,
   )
   const whatsappShareUrlB2 = whatsappMessageB2
-    ? `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(whatsappMessageB2)}`
-    : 'https://api.whatsapp.com/send?phone=48512253179'
+    ? `https://wa.me/48512253179&text=${encodeURIComponent(whatsappMessageB2)}`
+    : 'https://wa.me/48512253179'
   const emailIsValidB2 = validateEmail(emailB2)
   const canStartB2 = emailIsValidB2
 
@@ -3261,8 +3261,8 @@ const GermanTestsPage = () => {
     emailC1,
   )
   const whatsappShareUrlC1 = whatsappMessageC1
-    ? `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(whatsappMessageC1)}`
-    : 'https://api.whatsapp.com/send?phone=48512253179'
+    ? `https://wa.me/48512253179&text=${encodeURIComponent(whatsappMessageC1)}`
+    : 'https://wa.me/48512253179'
   const emailIsValidC1 = validateEmail(emailC1)
   const canStartC1 = emailIsValidC1
 
