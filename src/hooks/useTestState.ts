@@ -92,6 +92,10 @@ export const useTestState = ({
     const calculatedLevel = resolveLevel(correct)
     const finalPercent = Math.round((correct / questions.length) * 100)
     
+    // Prepare WhatsApp URL before try block
+    const message = shareConfig.buildMessage(correct, questions.length, finalPercent, calculatedLevel, missing, email)
+    const whatsappUrl = `${shareConfig.baseUrl}${encodeURIComponent(message)}`
+    
     try {
       await sendResultsEmail(
         correct,
@@ -106,17 +110,14 @@ export const useTestState = ({
       setEmailSent(true)
       // Track test completion
       trackTestCompletion(calculatedLevel, finalPercent, languageLabel)
-      
-      // Redirect to WhatsApp after email is sent
-      const message = shareConfig.buildMessage(correct, questions.length, finalPercent, calculatedLevel, missing, email)
-      const whatsappUrl = `${shareConfig.baseUrl}${encodeURIComponent(message)}`
-      window.open(whatsappUrl, '_blank')
     } catch (error) {
       setEmailSendError(
         error instanceof Error ? error.message : 'Nie udało się wysłać e-maila. Spróbuj ponownie później.',
       )
     } finally {
       setEmailSending(false)
+      // Open WhatsApp regardless of email result
+      window.open(whatsappUrl, '_blank')
     }
   }
 

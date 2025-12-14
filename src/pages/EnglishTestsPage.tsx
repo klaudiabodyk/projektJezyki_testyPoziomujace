@@ -1048,8 +1048,8 @@ const EnglishTestsPage = () => {
     testUrl,
     shareConfig: {
       buildMessage: buildEnglishShareMessage('A0-A2.1 (podstawowy)'),
-      baseUrl: 'https://wa.me/?text=',
-      fallbackUrl: '#',
+      baseUrl: 'https://api.whatsapp.com/send?phone=48512253179&text=',
+      fallbackUrl: 'https://api.whatsapp.com/send?phone=48512253179',
     },
   })
 
@@ -1066,8 +1066,8 @@ const EnglishTestsPage = () => {
     testUrl,
     shareConfig: {
       buildMessage: buildEnglishShareMessage('A2.2-C1 (zaawansowany)'),
-      baseUrl: 'https://wa.me/?text=',
-      fallbackUrl: '#',
+      baseUrl: 'https://api.whatsapp.com/send?phone=48512253179&text=',
+      fallbackUrl: 'https://api.whatsapp.com/send?phone=48512253179',
     },
   })
 
