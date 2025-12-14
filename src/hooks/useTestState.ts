@@ -6,7 +6,7 @@ import { sendResultsEmail } from '../utils/sendResults'
 import { trackTestCompletion } from '../utils/metaPixel'
 
 type ShareConfig = {
-  buildMessage: (score: number, total: number, percent: number | null, level: string) => string
+  buildMessage: (score: number, total: number, percent: number | null, level: string, missing: number, userEmail: string) => string
   baseUrl: string
   fallbackUrl: string
 }
@@ -50,9 +50,9 @@ export const useTestState = ({
 
   const whatsappShareUrl = useMemo(() => {
     if (score === null || level === null) return shareConfig.fallbackUrl
-    const message = shareConfig.buildMessage(score, questions.length, percent, level)
+    const message = shareConfig.buildMessage(score, questions.length, percent, level, unanswered, email)
     return `${shareConfig.baseUrl}${encodeURIComponent(message)}`
-  }, [level, percent, score, shareConfig, questions.length])
+  }, [level, percent, score, shareConfig, questions.length, unanswered, email])
 
   const handleEmailChange = (value: string) => {
     setEmail(value)
@@ -87,27 +87,37 @@ export const useTestState = ({
     setEmailSent(false)
     setEmailSendError(null)
     setEmailSending(true)
+    
+    // Calculate level immediately for email
+    const calculatedLevel = resolveLevel(correct)
+    const finalPercent = Math.round((correct / questions.length) * 100)
+    
+    // Prepare WhatsApp URL before try block
+    const message = shareConfig.buildMessage(correct, questions.length, finalPercent, calculatedLevel, missing, email)
+    const whatsappUrl = `${shareConfig.baseUrl}${encodeURIComponent(message)}`
+    
     try {
       await sendResultsEmail(
         correct,
         missing,
         email,
         questions.length,
-        level ?? 'N/A',
+        calculatedLevel,
         languageLabel,
         testLabel,
         testUrl,
       )
       setEmailSent(true)
       // Track test completion
-      const finalPercent = Math.round((correct / questions.length) * 100)
-      trackTestCompletion(level ?? 'N/A', finalPercent, languageLabel)
+      trackTestCompletion(calculatedLevel, finalPercent, languageLabel)
     } catch (error) {
       setEmailSendError(
         error instanceof Error ? error.message : 'Nie udało się wysłać e-maila. Spróbuj ponownie później.',
       )
     } finally {
       setEmailSending(false)
+      // Open WhatsApp regardless of email result
+      window.open(whatsappUrl, '_blank')
     }
   }
 

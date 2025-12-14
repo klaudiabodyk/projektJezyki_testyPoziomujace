@@ -4,6 +4,8 @@ import type { Question } from '../components/Test/types'
 import whatsappLogo from '../assets/whatsapp.png'
 import SectionWrapper from '../components/SectionWrapper/SectionWrapper'
 import { trackTestCompletion } from '../utils/metaPixel'
+import { sendResultsEmail } from '../utils/sendResults'
+import { validateEmail } from '../utils/validation'
 import './GermanTestsPage.css'
 
 const questionsA1: Question[] = [
@@ -2899,11 +2901,16 @@ const GermanTestsPage = () => {
     setEmailSentA1(false)
     setEmailSendErrorA1(null)
     setEmailSendingA1(true)
+    
+    // Prepare WhatsApp URL before try block
+    const percent = Math.round((correct / questionsA1.length) * 100)
+    const message = buildWhatsappShareText('niemiecki', 'A1', correct, questionsA1.length, percent, true, missing, emailA1)
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(message)}`
+    
     try {
-      await sendResultsEmail(correct, missing, emailA1, questionsA1.length, 'A1')
+      await sendResultsEmail(correct, missing, emailA1, questionsA1.length, 'A1', 'niemiecki', 'A1', `${window.location.origin}/niemiecki`)
       setEmailSentA1(true)
       // Track test completion
-      const percent = Math.round((correct / questionsA1.length) * 100)
       trackTestCompletion('A1', percent, 'Niemiecki')
     } catch (error) {
       setEmailSendErrorA1(
@@ -2913,6 +2920,8 @@ const GermanTestsPage = () => {
       )
     } finally {
       setEmailSendingA1(false)
+      // Open WhatsApp regardless of email result
+      window.open(whatsappUrl, '_blank')
     }
   }
 
@@ -2949,11 +2958,16 @@ const GermanTestsPage = () => {
     setEmailSentA2(false)
     setEmailSendErrorA2(null)
     setEmailSendingA2(true)
+    
+    // Prepare WhatsApp URL before try block
+    const percent = Math.round((correct / questionsA2.length) * 100)
+    const message = buildWhatsappShareText('niemiecki', 'A2', correct, questionsA2.length, percent, true, missing, emailA2)
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(message)}`
+    
     try {
-      await sendResultsEmail(correct, missing, emailA2, questionsA2.length, 'A2')
+      await sendResultsEmail(correct, missing, emailA2, questionsA2.length, 'A2', 'niemiecki', 'A2', `${window.location.origin}/niemiecki`)
       setEmailSentA2(true)
       // Track test completion
-      const percent = Math.round((correct / questionsA2.length) * 100)
       trackTestCompletion('A2', percent, 'Niemiecki')
     } catch (error) {
       setEmailSendErrorA2(
@@ -2963,6 +2977,8 @@ const GermanTestsPage = () => {
       )
     } finally {
       setEmailSendingA2(false)
+      // Open WhatsApp regardless of email result
+      window.open(whatsappUrl, '_blank')
     }
   }
 
@@ -2999,11 +3015,16 @@ const GermanTestsPage = () => {
     setEmailSentB1(false)
     setEmailSendErrorB1(null)
     setEmailSendingB1(true)
+    
+    // Prepare WhatsApp URL before try block
+    const percent = Math.round((correct / questionsB1.length) * 100)
+    const message = buildWhatsappShareText('niemiecki', 'B1', correct, questionsB1.length, percent, true, missing, emailB1)
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(message)}`
+    
     try {
-      await sendResultsEmail(correct, missing, emailB1, questionsB1.length, 'B1')
+      await sendResultsEmail(correct, missing, emailB1, questionsB1.length, 'B1', 'niemiecki', 'B1', `${window.location.origin}/niemiecki`)
       setEmailSentB1(true)
       // Track test completion
-      const percent = Math.round((correct / questionsB1.length) * 100)
       trackTestCompletion('B1', percent, 'Niemiecki')
     } catch (error) {
       setEmailSendErrorB1(
@@ -3013,6 +3034,8 @@ const GermanTestsPage = () => {
       )
     } finally {
       setEmailSendingB1(false)
+      // Open WhatsApp regardless of email result
+      window.open(whatsappUrl, '_blank')
     }
   }
 
@@ -3049,11 +3072,16 @@ const GermanTestsPage = () => {
     setEmailSentB2(false)
     setEmailSendErrorB2(null)
     setEmailSendingB2(true)
+    
+    // Prepare WhatsApp URL before try block
+    const percent = Math.round((correct / questionsB2.length) * 100)
+    const message = buildWhatsappShareText('niemiecki', 'B2', correct, questionsB2.length, percent, true, missing, emailB2)
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(message)}`
+    
     try {
-      await sendResultsEmail(correct, missing, emailB2, questionsB2.length, 'B2')
+      await sendResultsEmail(correct, missing, emailB2, questionsB2.length, 'B2', 'niemiecki', 'B2', `${window.location.origin}/niemiecki`)
       setEmailSentB2(true)
       // Track test completion
-      const percent = Math.round((correct / questionsB2.length) * 100)
       trackTestCompletion('B2', percent, 'Niemiecki')
     } catch (error) {
       setEmailSendErrorB2(
@@ -3063,6 +3091,8 @@ const GermanTestsPage = () => {
       )
     } finally {
       setEmailSendingB2(false)
+      // Open WhatsApp regardless of email result
+      window.open(whatsappUrl, '_blank')
     }
   }
 
@@ -3099,11 +3129,16 @@ const GermanTestsPage = () => {
     setEmailSentC1(false)
     setEmailSendErrorC1(null)
     setEmailSendingC1(true)
+    
+    // Prepare WhatsApp URL before try block
+    const percent = Math.round((correct / questionsC1.length) * 100)
+    const message = buildWhatsappShareText('niemiecki', 'C1', correct, questionsC1.length, percent, true, missing, emailC1)
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(message)}`
+    
     try {
-      await sendResultsEmail(correct, missing, emailC1, questionsC1.length, 'C1')
+      await sendResultsEmail(correct, missing, emailC1, questionsC1.length, 'C1', 'niemiecki', 'C1', `${window.location.origin}/niemiecki`)
       setEmailSentC1(true)
       // Track test completion
-      const percent = Math.round((correct / questionsC1.length) * 100)
       trackTestCompletion('C1', percent, 'Niemiecki')
     } catch (error) {
       setEmailSendErrorC1(
@@ -3113,6 +3148,8 @@ const GermanTestsPage = () => {
       )
     } finally {
       setEmailSendingC1(false)
+      // Open WhatsApp regardless of email result
+      window.open(whatsappUrl, '_blank')
     }
   }
 
@@ -3130,13 +3167,13 @@ const GermanTestsPage = () => {
     total: number,
     percentValue: number | null,
     isSubmitted: boolean,
+    missing: number,
+    userEmail: string,
   ) =>
     isSubmitted && score !== null
-      ? encodeURIComponent(
-          `Wynik testu poziomującego (${languageLabel})\nArkusz: ${testLabel}\nWynik: ${score}/${total}${
-            percentValue !== null ? ` (${percentValue}%)` : ''
-          }\nPomóż mi dobrać grupę!`,
-        )
+      ? `Wynik testu poziomującego - język ${languageLabel}\nArkusz: ${testLabel}\nWynik: ${score}/${total}${
+          percentValue !== null ? ` (${percentValue}%)` : ''
+        }\nNieodpowiedziane: ${missing}\nEmail uczestnika: ${userEmail}\nLink do testu: ${window.location.origin}/niemiecki`
       : ''
 
   const percentA1 =
@@ -3148,10 +3185,12 @@ const GermanTestsPage = () => {
     questionsA1.length,
     percentA1,
     submittedA1,
+    unansweredA1,
+    emailA1,
   )
   const whatsappShareUrlA1 = whatsappMessageA1
-    ? `https://wa.me/48512253179?text=${whatsappMessageA1}`
-    : 'https://wa.me/48512253179'
+    ? `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(whatsappMessageA1)}`
+    : 'https://api.whatsapp.com/send?phone=48512253179'
   const emailIsValidA1 = validateEmail(emailA1)
   const canStartA1 = emailIsValidA1
 
@@ -3164,10 +3203,12 @@ const GermanTestsPage = () => {
     questionsA2.length,
     percentA2,
     submittedA2,
+    unansweredA2,
+    emailA2,
   )
   const whatsappShareUrlA2 = whatsappMessageA2
-    ? `https://wa.me/48512253179?text=${whatsappMessageA2}`
-    : 'https://wa.me/48512253179'
+    ? `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(whatsappMessageA2)}`
+    : 'https://api.whatsapp.com/send?phone=48512253179'
   const emailIsValidA2 = validateEmail(emailA2)
   const canStartA2 = emailIsValidA2
 
@@ -3180,10 +3221,12 @@ const GermanTestsPage = () => {
     questionsB1.length,
     percentB1,
     submittedB1,
+    unansweredB1,
+    emailB1,
   )
   const whatsappShareUrlB1 = whatsappMessageB1
-    ? `https://wa.me/48512253179?text=${whatsappMessageB1}`
-    : 'https://wa.me/48512253179'
+    ? `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(whatsappMessageB1)}`
+    : 'https://api.whatsapp.com/send?phone=48512253179'
   const emailIsValidB1 = validateEmail(emailB1)
   const canStartB1 = emailIsValidB1
 
@@ -3196,10 +3239,12 @@ const GermanTestsPage = () => {
     questionsB2.length,
     percentB2,
     submittedB2,
+    unansweredB2,
+    emailB2,
   )
   const whatsappShareUrlB2 = whatsappMessageB2
-    ? `https://wa.me/48512253179?text=${whatsappMessageB2}`
-    : 'https://wa.me/48512253179'
+    ? `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(whatsappMessageB2)}`
+    : 'https://api.whatsapp.com/send?phone=48512253179'
   const emailIsValidB2 = validateEmail(emailB2)
   const canStartB2 = emailIsValidB2
 
@@ -3212,10 +3257,12 @@ const GermanTestsPage = () => {
     questionsC1.length,
     percentC1,
     submittedC1,
+    unansweredC1,
+    emailC1,
   )
   const whatsappShareUrlC1 = whatsappMessageC1
-    ? `https://wa.me/48512253179?text=${whatsappMessageC1}`
-    : 'https://wa.me/48512253179'
+    ? `https://api.whatsapp.com/send?phone=48512253179&text=${encodeURIComponent(whatsappMessageC1)}`
+    : 'https://api.whatsapp.com/send?phone=48512253179'
   const emailIsValidC1 = validateEmail(emailC1)
   const canStartC1 = emailIsValidC1
 
@@ -4250,43 +4297,3 @@ const GermanTestsPage = () => {
 }
 
 export default GermanTestsPage
-
-function validateEmail(value: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())
-}
-
-async function sendResultsEmail(
-  correct: number,
-  missing: number,
-  userEmail: string,
-  totalQuestions: number,
-  level: string,
-  testLabel?: string,
-) {
-  const apiBase = import.meta.env.VITE_API_BASE_URL ?? ''
-  const percent = Math.round((correct / totalQuestions) * 100)
-  const language = 'niemiecki'
-  const resolvedTestLabel = testLabel ?? level
-  const testUrl = `${window.location.origin}/niemiecki`
-
-  const response = await fetch(`${apiBase}/api/send-result`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      correct,
-      total: totalQuestions,
-      missing,
-      percent,
-      userEmail,
-      level,
-      language,
-      testLabel: resolvedTestLabel,
-      testUrl,
-    }),
-  })
-
-  if (!response.ok) {
-    const message = await response.text()
-    throw new Error(message || 'Błąd wysyłania e-maila.')
-  }
-}

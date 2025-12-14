@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test WhatsApp</title>
+</head>
+<body>
+    <h1>Test WhatsApp Links</h1>
+    
+    <h2>Test 1: Prosty link bez wiadomości</h2>
+    <a href="https://wa.me/48512253179" target="_blank">Otwórz WhatsApp (bez wiadomości)</a>
+    
+    <h2>Test 2: Link z krótką wiadomością</h2>
+    <a href="https://wa.me/48512253179?text=Hello" target="_blank">Otwórz WhatsApp (Hello)</a>
+    
+    <h2>Test 3: Link z długą wiadomością (jak w aplikacji)</h2>
+    <a id="longMessage" href="#" target="_blank">Otwórz WhatsApp (pełna wiadomość)</a>
+    
+    <h2>Test 4: Console log</h2>
+    <button onclick="testUrl()">Test URL w console</button>
+    
+    <script>
+        const message = `Wynik testu poziomującego - język niemiecki
+Arkusz: A1
+Wynik: 30/50 (60%)
+Nieodpowiedziane: 5
+Email uczestnika: test@test.com
+Link do testu: http://localhost:5173/niemiecki`;
+        
+        const encoded = encodeURIComponent(message);
+        const url = `https://wa.me/48512253179?text=${encoded}`;
+        
+        document.getElementById('longMessage').href = url;
+        
+        function testUrl() {
+            console.log('Message:', message);
+            console.log('Encoded:', encoded);
+            console.log('Full URL:', url);
+            console.log('URL length:', url.length);
+        }
+    </script>
+</body>
+</html>
