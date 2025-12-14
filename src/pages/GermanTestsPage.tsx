@@ -4261,9 +4261,13 @@ async function sendResultsEmail(
   userEmail: string,
   totalQuestions: number,
   level: string,
+  testLabel?: string,
 ) {
   const apiBase = import.meta.env.VITE_API_BASE_URL ?? ''
   const percent = Math.round((correct / totalQuestions) * 100)
+  const language = 'niemiecki'
+  const resolvedTestLabel = testLabel ?? level
+  const testUrl = `${window.location.origin}/niemiecki`
 
   const response = await fetch(`${apiBase}/api/send-result`, {
     method: 'POST',
@@ -4275,6 +4279,9 @@ async function sendResultsEmail(
       percent,
       userEmail,
       level,
+      language,
+      testLabel: resolvedTestLabel,
+      testUrl,
     }),
   })
 

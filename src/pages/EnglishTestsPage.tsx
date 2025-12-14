@@ -1034,6 +1034,7 @@ const buildEnglishShareMessage =
 
 const EnglishTestsPage = () => {
   const [selectedLevel, setSelectedLevel] = useState<'basic' | 'advanced' | null>(null)
+  const testUrl = `${window.location.origin}/angielski`
 
   const basicTest = useTestState({
     questions: questionsBasic,
@@ -1043,6 +1044,8 @@ const EnglishTestsPage = () => {
       return 'A2.1'
     },
     languageLabel: 'angielski',
+    testLabel: 'A0-A2.1 (podstawowy)',
+    testUrl,
     shareConfig: {
       buildMessage: buildEnglishShareMessage('A0-A2.1 (podstawowy)'),
       baseUrl: 'https://wa.me/?text=',
@@ -1059,6 +1062,8 @@ const EnglishTestsPage = () => {
       return 'B2'
     },
     languageLabel: 'angielski',
+    testLabel: 'A2.2-C1 (zaawansowany)',
+    testUrl,
     shareConfig: {
       buildMessage: buildEnglishShareMessage('A2.2-C1 (zaawansowany)'),
       baseUrl: 'https://wa.me/?text=',
