@@ -25,7 +25,7 @@ export const handler = async (event) => {
     return { statusCode: 400, headers: corsHeaders, body: 'Invalid JSON body' }
   }
 
-  const { correct, total, missing, percent, userEmail, level, language } = payload || {}
+  const { correct, total, missing, percent, userEmail, level, language, testLabel, testUrl } = payload || {}
 
   if (!isEmailValid(userEmail)) {
     return { statusCode: 400, headers: corsHeaders, body: 'Niepoprawny adres e-mail.' }
@@ -52,18 +52,26 @@ export const handler = async (event) => {
 
     const to = process.env.MAIL_TO ?? 'kontakt@joannaadamek.edu.pl'
     const from = process.env.MAIL_FROM ?? process.env.MAIL_USER
-    const subject = process.env.MAIL_SUBJECT ?? 'Wynik testu poziomującego'
+    const subjectBase = process.env.MAIL_SUBJECT ?? 'Wynik testu poziomującego'
+    const subject = language ? `${subjectBase} - ${language}` : subjectBase
 
     const computedPercent =
-      typeof percent === 'number' ? percent : Math.round(((correct ?? 0) / (total || 1)) * 100)
+      typeof percent === 'number' && !Number.isNaN(percent)
+        ? percent
+        : Math.round(((correct ?? 0) / (total || 1)) * 100)
 
     const lines = [
-      `Wynik: ${correct}/${total} (${computedPercent}%)`,
-      `Nieodpowiedziane: ${missing}`,
-      `Poziom: ${level ?? '-'}`,
-      `Język: ${language ?? '-'}`,
+      `Wynik testu poziomującego${language ? ` - język ${language}` : ''}`,
+      `Arkusz: ${testLabel ?? '-'}`,
+      `Rekomendowany poziom: ${level ?? '-'}`,
+      `Wynik: ${correct ?? 0}/${total ?? 0} (${computedPercent}%)`,
+      `Nieodpowiedziane: ${missing ?? 0}`,
       `Email uczestnika: ${userEmail}`,
     ]
+
+    if (testUrl) {
+      lines.push(`Link do testu: ${testUrl}`)
+    }
 
     await transporter.sendMail({
       from,

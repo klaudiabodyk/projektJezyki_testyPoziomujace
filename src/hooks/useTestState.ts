@@ -16,9 +16,18 @@ type UseTestStateProps = {
   resolveLevel: (score: number) => string
   languageLabel: string
   shareConfig: ShareConfig
+  testLabel: string
+  testUrl: string
 }
 
-export const useTestState = ({ questions, resolveLevel, languageLabel, shareConfig }: UseTestStateProps) => {
+export const useTestState = ({
+  questions,
+  resolveLevel,
+  languageLabel,
+  shareConfig,
+  testLabel,
+  testUrl,
+}: UseTestStateProps) => {
   const [answers, setAnswers] = useState<Record<number, string>>({})
   const [score, setScore] = useState<number | null>(null)
   const [unanswered, setUnanswered] = useState<number>(questions.length)
@@ -79,7 +88,16 @@ export const useTestState = ({ questions, resolveLevel, languageLabel, shareConf
     setEmailSendError(null)
     setEmailSending(true)
     try {
-      await sendResultsEmail(correct, missing, email, questions.length, level ?? 'N/A', languageLabel)
+      await sendResultsEmail(
+        correct,
+        missing,
+        email,
+        questions.length,
+        level ?? 'N/A',
+        languageLabel,
+        testLabel,
+        testUrl,
+      )
       setEmailSent(true)
       // Track test completion
       const finalPercent = Math.round((correct / questions.length) * 100)

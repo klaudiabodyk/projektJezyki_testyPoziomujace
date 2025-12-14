@@ -6,6 +6,8 @@ type SendResultsPayload = {
   userEmail: string
   level: string
   language?: string
+  testLabel?: string
+  testUrl?: string
 }
 
 export async function sendResultsEmail(
@@ -15,6 +17,8 @@ export async function sendResultsEmail(
   totalQuestions: number,
   level: string,
   language?: string,
+  testLabel?: string,
+  testUrl?: string,
 ) {
   const apiBase = import.meta.env.VITE_API_BASE_URL ?? ''
   const percent = Math.round((correct / totalQuestions) * 100)
@@ -30,6 +34,14 @@ export async function sendResultsEmail(
 
   if (language) {
     payload.language = language
+  }
+
+  if (testLabel) {
+    payload.testLabel = testLabel
+  }
+
+  if (testUrl) {
+    payload.testUrl = testUrl
   }
 
   const response = await fetch(`${apiBase}/api/send-result`, {
